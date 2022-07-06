@@ -35,6 +35,11 @@
 # d$theta = NA
 # d$sem = NA
 
+funding = "The development of the Aphasia Communication Outcome Measure and this software was funded by the Veterans Affairs Rehabilitation Research and Development Service under Awards C2386R, C6098R, and C4134P (PI: Patrick J. Doyle); Career Development Awards 6210M and 7476W, and Merit Award I01RX001963 (PI: William Hula), and the National Institutes of Health National Institute on Deafness and other Communication Disorders award F31 DC019853-01 (PI: Cavanaugh). The authors gratefully acknowledge the support of the VA Pittsburgh Healthcare System Geriatric Research, Education, and Clinical Center, the VAPHS Audiology and Speech Pathology Service, and the support and assistance of Patrick Doyle, Ann St. Jacques, Billy Irwin, Hannele Nicholson, Lindsey Cox, Stacey Kellough, Brooke Lang, Emily Boss, Jim Schumacher, Mary Sullivan, Shannon Austermann Hula, Michael Walsh Dickey, William Evans, Gerasimos Fergadiotis, Rebecca Ruffing, Alyssa Autenreith, Ronda Winans-Mitrik, and Christine Matthews."
+
+tooltip = "The full length adaptive ACOM administers 59 items by default while the published adaptive short-form ACOM includes only 12 items. You can also administer any number of items between 12 and 59. Increasing the number of items improves measurement precision but requires more time."
+
+#load("~/github-repos/acom/R/sysdata.rda")
 usethis::use_data(
   jsCode,
   enter,
@@ -45,4 +50,6 @@ usethis::use_data(
   acom_cb_group,
   acom_cbControl,
   acom_cb_names,
+  funding,
+  tooltip,
   internal = T, overwrite = T)

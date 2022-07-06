@@ -24,13 +24,13 @@ goCAT <- function(v){
                           method = "EAP", model = "GRM",
                           D = 1, priorDist = "norm",
                           priorPar = c(50, 10),
-                          parInt = c(10, 90, 33))
+                          parInt = c(10, 90, 81))
     
     theta = cur_theta
     
     cur_sem <- catR::semTheta(cur_theta, it = dat[,4:7], x = dat$response_merge,
                         method = "EAP", model = "GRM", D = 1, priorDist = "norm",
-                        priorPar = c(50, 10), parInt = c(10, 90, 33))
+                        priorPar = c(50, 10), parInt = c(10, 90, 81))
     
   }
   
@@ -44,7 +44,7 @@ goCAT <- function(v){
                       criterion = "MFI",
                       method = "EAP",
                       priorDist = "norm", priorPar = c(50, 10),
-                      D = 1, range = c(10, 90), parInt = c(10, 90, 33),
+                      D = 1, range = c(10, 90), parInt = c(10, 90, 81),
                       infoType = "observed",
                       randomesque = 1, random.seed = NULL,
                       rule = "length", thr = 20, SETH = NULL,
@@ -89,12 +89,9 @@ response_to_numeric <- function(select, clarify, merge){
       response == "Mostly" ~ 2,
       response == "Somewhat" ~ 1,
       response == "Not very"~ 0,
-      response == "Doesn't apply to me" ~ 0
-    )) %>%
-    dplyr::mutate(response_num = dplyr::case_when(
-      response_num == 0 & clarify == "no" ~ NA_real_,
-      response_num == 0 & clarify == "yes" ~ 0,
-      TRUE ~ response_num
+      response == "Doesn't apply to me" & clarify == "no" ~ NA_real_,
+      response == "Doesn't apply to me" & clarify == "yes" ~ 0,
+      TRUE ~ 999
     )) %>%
     dplyr::mutate(response_merge = dplyr::case_when(
       merge_cats == 1 & response_num == 1 ~ 0,

@@ -15,24 +15,19 @@ intro_tab_div <- function() {
                      h3("Aphasia Communication Outcome Measure")
                  ),
                  div(align = "center",
-                     div(style = "display: inline-block; text-align: left;margin-top:40px;",
-                         # selectInput("test", "Select a Test Version:",
-                         #             choices = c("Adaptive/Full Length ACOM"=59,
-                         #                         "Adaptive/Short Form ACOM" = 12,
-                         #                         "Adaptive/Custom Length ACOM" = "custom"
-                         #                         #,"Short ACOM" = "12"
-                         #             )),
-                         # shinyjs::hidden(
-                           sliderInput("test", label = "Select a Test Length",
-                                       min = 4, max = 59, step = 1, value = 4),
-                         #),
-                         uiOutput("test_text"),
-                         
+                     div(style = "display: inline-block; text-align: left;margin-top:30px;",
+                         div(title = tooltip,
+                             numericInput("test", label = "Enter test length (number of items)",
+                             min = 12, max = 59, step = 1, value = 12)
+                             ),
                          textInput("participant", "Enter Participant ID"),
-                         textInput("examiner", "Enter Examiner ID"),
+                         textInput("examiner", "Enter Examiner ID")
                      )),br(),
                  div(align = "center",
                      actionButton("next1", "Next")
+                 ),
+                 div(align = "center",
+                   tags$div(funding, style = "color:black; font-size:0.7rem;font-style:italic;padding:32px 80px;")
                  )
                )
              ),

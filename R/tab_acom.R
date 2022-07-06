@@ -5,9 +5,9 @@
 #' @export
 acom_tab_div <- function(values){
        div(
-         # shiny::fluidRow(
-         #   shiny::uiOutput("item_number_slides")
-         # ),
+         shiny::fluidRow(style="height:0px;",
+           shiny::uiOutput("item_number_slides")
+         ),
          shiny::fluidRow(
            column(width = 10,offset = 1,align = "center",
            uiOutput("questionText"),
@@ -17,7 +17,7 @@ acom_tab_div <- function(values){
                div(id = "stim",
                    div(class = "container",
                       tags$img(src = "assets/acom_scale_radio.png", style = "height:550px;position:absolute;"),
-                       radioButtons("select",label = NULL, inline = TRUE, selected = character(0),
+                       radioButtons("select",label = NULL, inline = TRUE, selected = "Not very", #character(0),
                                    choices = c(
                                      "Doesn't apply to me",
                                      "Not very",

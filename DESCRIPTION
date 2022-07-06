@@ -21,13 +21,11 @@ Imports:
     catR,
     DT,
     here,
-    keys,
     shinyjs,
     tibble,
     ggplot2,
     tidyr,
     dplyr,
-    shinyWidgets,
     pkgload,
     htmltools,
     markdown,
@@ -45,4 +43,4 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
-    R (>= 2.10)
+    R (>= 3.6.0)

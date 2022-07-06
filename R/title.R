@@ -16,6 +16,7 @@ pagetitle <- function(){
            shinyjs::hidden(
              downloadResultsUI(id = "download_results")
            ),
+           
          #  shinyjs::hidden(
          #     downloadReportUI(id = "download_report_rescore")
          # ),
@@ -30,7 +31,9 @@ pagetitle <- function(){
              actionButton("start_over",
                           "Start Over",
                           style = "background-color:#f8f9fa; border:0px;")
-           )
+           ),
+         actionButton("info", icon =  shiny::icon("info"), label = NULL,
+                      style = "font-size: 0.8rem;background-color:#f8f9fa; border:0px;")
      )
      )
   return(title)

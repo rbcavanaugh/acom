@@ -18,13 +18,70 @@ header-includes:
 knitr::opts_chunk$set(fig.pos = 'H')
 #options(knitr.kable.NA = '-')
 shiny::setProgress(0.1)
+
+final = params$v$results %>%
+  tidyr::drop_na(response) %>%
+  dplyr::filter(order == max(order, na.rm = TRUE)) %>%
+  dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2))
+
+theta = final$theta
+sem = final$sem
+z = (theta-50)/10
+ab = ifelse(z>=0, "above", "below")
+
+x95 = glue::glue("{round(theta-1.96  *sem, 2)}, {round(theta+1.96  *sem, 2)}")
+x90 = glue::glue("{round(theta-1.645 *sem, 2)}, {round(theta+1.645 *sem, 2)}")
+x68 = glue::glue("{round(theta-1     *sem, 2)}, {round(theta+1     *sem, 2)}")
+
+table1 = tibble::tribble(
+  ~"label", ~"score",
+  "Final T-Score Estimate" , as.character(theta),
+  "Final Standard Error"   , as.character(sem),   
+  "Final Estimate Type"    , as.character("EAP"),   
+  "95% C.I."               , as.character(x95),
+  "90% C.I."               , as.character(x90),
+  "68% C.I."               , as.character(x68)
+)
+
+
+completed = params$v$results %>%
+  dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2)) %>%
+  tidyr::drop_na(response)
+
+short = params$v$results %>%
+  tidyr::drop_na(response) %>%
+  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1),
+         m = cumsum(obs)) %>%
+  dplyr::filter(m == 12) %>%
+  dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2))
+
+
+theta_short = short$theta
+sem_short = short$sem
+z_short = (theta_short-50)/10
+ab_short = ifelse(z_short>=0, "above", "below")
+
+x95_short = glue::glue("{round(theta_short-1.96  *sem_short, 2)}, {round(theta_short+1.96  *sem_short, 2)}")
+x90_short = glue::glue("{round(theta_short-1.645 *sem_short, 2)}, {round(theta_short+1.645 *sem_short, 2)}")
+x68_short = glue::glue("{round(theta_short-1     *sem_short, 2)}, {round(theta_short+1     *sem_short, 2)}")
+
+table2 = tibble::tribble(
+  ~"label", ~"score",
+  "Final T-Score Estimate" , as.character(theta_short),
+  "Final Standard Error"   , as.character(sem_short),   
+  "Final Estimate Type"    , as.character("EAP"),   
+  "95% C.I."               , as.character(x95_short),
+  "90% C.I."               , as.character(x90_short),
+  "68% C.I."               , as.character(x68_short)
+)
+
 ```
 
 ### Summary
 
-This individual's T-score estimate of \textcolor{red}{TSCORE} (95% confidence interval: \textcolor{red}{LOWER}, \textcolor{red}{UPPER}) 
-indicates self-reported communicative functioning approximately \textcolor{red}{X} standard 
-deviations above the mean reported in a large reference sample of community-dwelling
+This individual's T-score estimate of `r theta` (95% confidence interval: `r x95`) 
+indicates self-reported communicative functioning approximately `r abs(z)` standard 
+deviations `r ab` the mean reported in a large reference sample of community-dwelling
 persons with aphasia of at least one month post-onset.
 
 T-scores are scaled such that the mean and standard deviation in the reference
@@ -42,58 +99,37 @@ functioning score.
 
 <br>
 
-Test Type: Adaptive/Full Length ACOM - 59 item ACOM with the first 12 items adaptively administered and the last 47 items randomly administered.
+**Test: Adaptive ACOM with `r params$v$test_length` items administered.**
 
-Final T-Score Estimate =   \textcolor{red}{57.10}
+```{r, echo = FALSE}
+knitr::kable(table1, booktabs = TRUE, col.names = NULL)
+```
 
-Final Standard Error =     \textcolor{red}{1.44}          
+Notes: Complete
 
-Final Estimate Type =      \textcolor{red}{EAP}           
+- Item parameter set used = January2015_59ItemParamSet
 
-95% C.I. =                 \textcolor{red}{(54.29, 59.92)}
+- Number of items administered = `r v$test_length`
 
-90% C.I. =                 \textcolor{red}{(54.75, 59.46)}
+- Number of items marked NA = `r sum(is.na(completed$response_num))`
 
-68% C.I. =                 \textcolor{red}{(55.95, 58.25)}
+**Test: Adaptive ACOM - 12 item short version of the ACOM with adaptive item administration.**
 
-### Administration notes 
+```{r, echo = FALSE}
+knitr::kable(table2, booktabs = TRUE, col.names = NULL)
+```
 
-Notes: \textcolor{red}{Complete}
+- Item parameter set used = January2015_59ItemParamSe
 
-Item parameter set used = \textcolor{red}{January2015\_59ItemParamSet}
+- Number of items administered = `r nrow(short)`
 
-Number of items administered = 59
-
-Number of items marked NA = \textcolor{red}{0}
-
-Test Type: Adaptive ACOM - 12 item short version of the ACOM with adaptive item administration.
-
-Final T-Score Estimate =  \textcolor{red}{57.33}         
-
-Final Standard Error =     \textcolor{red}{2.62}          
-
-Final Estimate Type =      \textcolor{red}{EAP}           
-
-95% C.I. =                 \textcolor{red}{(52.20, 62.46)}
-
-90% C.I. =                 \textcolor{red}{(53.04, 61.62)}
-
-68% C.I. =                 \textcolor{red}{(55.24, 59.42)}
-
-Notes: \textcolor{red}{Complete}
-
-Item parameter set used = \textcolor{red}{January2015\_59ItemParamSet}
-
-Number of items administered = \textcolor{red}{12}
-
-Number of items marked NA = \textcolor{red}{0}
+- Number of items marked NA = `r sum(is.na(short$response))`
 
 
 ### About this report
 
-This report was downloaded on \textcolor{red}{DOWNLOAD TIME} and generated by the ACOM shiny web app located at \textcolor{red}{https://rb-cavanaugh.shinyapps.io/acom/.} This web-app is open source and the source code is located at \textcolor{red}{https://github.com/aphasia-apps/acom}. Comments, feedback, and bug-reports can be made on the github page. 
-
-The app can be cited as: CITATION
+This report was downloaded on `r Sys.time()` and generated by the ACOM shiny web app located at https://rb-cavanaugh.shinyapps.io/acom/. This web-app is open source and the source code is located at https://github.com/aphasia-apps/acom. Comments, feedback, and bug-reports can be made on the github page.
+The app can be cited as: Cavanaugh, R., Hula, W.D., Doyle, P. (2022). acomR: The Aphasia Communication Outcome Measure web application. Version 0.0.0.9 Available from https://github.com/rbcavanaugh/acom.
 
 ```{r, echo = F}
 shiny::setProgress(0.9)
@@ -101,4 +137,10 @@ shiny::setProgress(0.9)
 
 ### References
 
-\textcolor{red}{REFERENCES}
+Doyle, P. J., McNeil, M. R., Le, K., Hula, W. D., & Ventura, M. B. (2008). Measuring communicative functioning in community‐dwelling stroke survivors: Conceptual foundation and item development. Aphasiology, 22(7–8), 718–728.
+
+Hula, W. D., & Doyle, P. J. (2021). The Aphasia Communication Outcome Measure: Motivation, development, validity evidence, and interpretation of change scores. Seminars in Speech and Language, 42(03), 211–224.
+
+Hula, W. D., Doyle, P. J., Stone, C. A., Austermann Hula, S. N., Kellough, S., Wambaugh, J. L., Ross, K. B., Schumacher, J. G., & St. Jacque, A. (2015). The Aphasia Communication Outcome Measure (ACOM): Dimensionality, item bank calibration, and initial validation. Journal of Speech Language and Hearing Research, 58(3), 906.
+
+Hula, W. D., Kellough, S., & Doyle, P. J. (2015). Reliability and validity of adaptive and static short forms of the Aphasia Communication Outcome Measure. Presentation to the Clinical Aphaisology Conference, Monterey, CA.

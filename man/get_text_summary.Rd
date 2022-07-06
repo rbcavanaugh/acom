@@ -4,32 +4,10 @@
 \alias{get_text_summary}
 \title{Text summary for the top of the results page above the plot}
 \usage{
-get_text_summary(
-  ability,
-  sem,
-  last_ability,
-  last_sem,
-  num_previous,
-  n_items,
-  html_p = T
-)
+get_text_summary(v)
 }
 \arguments{
-\item{ability}{ability}
-
-\item{last_ability}{last abil}
-
-\item{num_previous}{num prev}
-
-\item{acc}{acc}
-
-\item{ci_95}{ci95}
-
-\item{last_ci_95}{last ci95}
-
-\item{first_ability}{last first}
-
-\item{first_ci_95}{first ci}
+\item{v}{all data}
 }
 \description{
 Text summary for the top of the results page above the plot

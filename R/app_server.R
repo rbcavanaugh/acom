@@ -20,7 +20,8 @@ app_server <- function( input, output, session ) {
     itnum = 1,
     results = d,
     num_enters = 0,
-    counter = 1
+    counter = 1,
+    clarify = NA
   )
   
   ################################################################################
@@ -116,6 +117,7 @@ app_server <- function( input, output, session ) {
   
   # Start over just refreshes the page/ app. This felt like the safest option
   # to ensure that nothing was carried over from the previous adminsitration. 
+
   observeEvent(input$start_over,{
     session$reload()
   })
@@ -130,12 +132,13 @@ app_server <- function( input, output, session ) {
 
   
   # and the green circle for the assessment slides. 
-  # output$item_number_slides <- renderUI({
-  #   req(v$test_length)
-  #   txt = paste0(v$i, "/", v$test_length)
-  #   column(align = "left", width = 12,
-  #          div(txt, class = "response"))
-  # })
+  output$item_number_slides <- renderUI({
+    req(v$test_length)
+    n = sum(!is.na(v$results$response_num))
+    txt = paste0(n, "/", v$test_length)
+    column(align = "left", width = 12,
+           div(txt, class = "response"))
+  })
 
 
   ##############################################################################
@@ -187,22 +190,31 @@ app_server <- function( input, output, session ) {
     if (input$select == "Doesn't apply to me") {
       showModal(
         modalDialog(
+          size = "m",
           title = "Is this due to your communication difficulties or some other reason?",
-          fluidRow(
+          div(
             align = "center",
-            shinyWidgets::radioGroupButtons(
-              "clarify",
-              label = NULL,
-              choices = c(
-                "No, due to some other reason" = "no",
-                "Yes, due to my communication difficulties" =
-                  "yes"
-              ),
-              selected = character(0)
-              
-            )
+            style = "margin-top: 24px;",
+            div(actionButton("yes",
+                             tags$b("Yes, due to my communication difficulties"),
+                                    width = "100%"), style="margin:20px;"),
+            div(actionButton("no",
+                             tags$b("No, due to some other reason"),
+                             width = "100%"), style="margin:20px;")
+            
+            # shinyWidgets::radioGroupButtons(
+            #   "clarify",
+            #   label = NULL,
+            #   choices = c(
+            #     "No, due to some other reason" = "no",
+            #     "Yes, due to my communication difficulties" =
+            #       "yes"
+            #   ),
+            #   selected = character(0)
+            #   
+            # )
           ),
-          footer = NULL,
+          footer = modalButton("Cancel"),
           easyClose = FALSE
         )
       )
@@ -215,8 +227,13 @@ app_server <- function( input, output, session ) {
   
   
   # close the modal when one of the buttons is pressed
-  observeEvent(input$clarify, {
-    req(input$clarify)
+  observeEvent(input$no, {
+    v$clarify = "no"
+    v$num_enters = v$num_enters + 1
+    removeModal()
+  })
+  observeEvent(input$yes, {
+    v$clarify = "yes"
     v$num_enters = v$num_enters + 1
     removeModal()
   })
@@ -225,16 +242,9 @@ app_server <- function( input, output, session ) {
     # don't do this on start up
     req(v$num_enters > 0)
     
-    
-    # can't feed a null value to a function
-    if (is.null(input$clarify)) {
-      v$clarify = NA
-    } else {
-      v$clarify = input$clarify
-    }
-    
     responses = response_to_numeric(input$select, v$clarify, v$results$merge_cats[v$itnum])
     v$results$response_num[v$itnum] = responses$response_num
+    print(v$results$response_num)
     v$results$response[v$itnum] = responses$response
     v$results$clarify[v$itnum] = responses$clarify
     v$results$response_merge[v$itnum] = responses$response_merge
@@ -252,13 +262,14 @@ app_server <- function( input, output, session ) {
       updateNavbarPage(session = session, "mainpage", selected = "results")
       shinyjs::show("download_report-report_download")
       shinyjs::show("download_results-results_download")
+      shinyjs::show("start_over")
     } else {
       # otherwise, iterate on the i
-      shinyWidgets::updateRadioGroupButtons(session, "clarify", selected = character(0))
-      updateRadioButtons(session, "select", selected = character(0))
+      #updateRadioButtons(session, "select", selected = character(0))
       
       v$i = v$i + 1
       v$itnum = cat_data$next_item
+      v$clarify = NA
       
     }
     
@@ -325,43 +336,18 @@ app_server <- function( input, output, session ) {
            style = "font-size:1.3rem;margin-top:30px;")
   })
   
-  
-  output$test_text <- renderUI({
-    
-      txt = glue::glue("Administer a {input$test} item ACOM.")
-    
-    return(div(txt
-               #,style = "width:300px;height:100px;"
-               ))
-    
-  })
-  
 
-  ################################## SUMMARY TEXT ################################
-  # ------------------------------------------------------------------------------
-  ################################################################################
-  #  outputs a summary sentence
-  # output$results_summary <- renderUI({
-  #   req(values$irt_final)
-  #   req(values$results_data_long)
-  #   div(
-  #     get_text_summary(ability = values$irt_final$ability,
-  #                    sem = values$irt_final$sem,
-  #                    last_ability = values$irt_final$last_ability,
-  #                    last_sem = values$irt_final$last_sem,
-  #                    num_previous = values$num_previous),br(),
-  #     get_item_warning(values) # show a warning if not enugh items were given. 
-  #   )
-  #     
-  # })
-  
   ################################## DOWNLOADS ###################################
   # ------------------------------------------------------------------------------
   ################################################################################
+  
   # Data
   # Code held in shiny modules download_report.R and download results.R
   downloadResultsServer(id = "download_results",
-                       values = v$results) 
+                       values = v$results%>%
+                         dplyr::select(item, itnum, item_content,
+                                       content_area, order, response, clarify,
+                                       theta, sem, discrim, b1, b2, b3, merge_cats, response_num, response_merge)) 
   # downloadResultsServer(id = "download_results_rescore",
   #                      values = v$results)
    # REPORT 
@@ -386,6 +372,29 @@ app_server <- function( input, output, session ) {
   #     )
   # })
 
+  ################################## SUMMARY TEXT ################################
+  # ------------------------------------------------------------------------------
+  ################################################################################
+  #  outputs a summary sentence
+  output$results_summary <- renderUI({
+    req(input$mainpage == "results")
+    summary_list = get_text_summary(v)
+    
+    d = div(align = "left",
+            style="margin-top:30px; padding-left:24px;padding-right:24px;",
+            
+            tags$p(tags$b(summary_list$p1)), 
+            tags$p(summary_list$p2), 
+            tags$p(summary_list$p3),
+            div(align = "center",
+                renderTable(summary_list$table1)
+            )
+    )
+    
+    return(d)
+    
+  })
+  
   ################################## TABLE #######################################
   # ------------------------------------------------------------------------------
   ################################################################################
@@ -393,20 +402,44 @@ app_server <- function( input, output, session ) {
   
   output$responses <- DT::renderDataTable(server = FALSE, {
     req(input$mainpage == "results")
-    df = v$results %>% dplyr::select(-discrim,-b1,-b2,-b3) %>%
+    df = v$results %>% dplyr::select(item, itnum, item_content,
+                                     content_area, order, response, clarify,
+                                     theta, sem) %>%
       dplyr::mutate(theta = round(theta, 4), sem = round(sem, 4)) %>%
       dplyr::arrange(order)
     
     DT::datatable(df,
                   rownames = FALSE,
                   options = list(rowCallback = DT::JS(rowCallback),
-                                 dom = 'frtip'),
+                                 dom = 'frtip',
+                                 scrollX = TRUE,
+                                 autoWidth = TRUE,
+                                 columnDefs = list(list(width = '40%', targets = (2)))),
                   filter = list(position = 'bottom', clear = FALSE)
     )
       
   })
   
   
+  
+  ###############################################################################
+  ################################################################################
+  ################################## INFO MODAL #################################
+  ################################################################################
+  ################################################################################
+  
+  observeEvent(input$info,{
+      showModal(
+        modalDialog(
+          size = "xl",
+          title = "Technical Documentation",
+          div(style = "font-size:0.8rem;",
+              includeMarkdown(system.file("app/www/about.md", package = "acom"))),
+          footer = modalButton("Dismiss"),
+          easyClose = TRUE
+        )
+      )
+  })
   
   ################################################################################
   ################################################################################

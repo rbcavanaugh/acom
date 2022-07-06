@@ -3,16 +3,19 @@
 #' @export
 results_tab_div <- function(){
   fluidRow(
-  column(width = 12,offset = 0, br(),
-         #tabsetPanel(type = "pills",
-                     #tabPanel("Summary",br(),
-                              # uiOutput("results_summary"), 
-                              # plotOutput("plot"), br(),
-                              # uiOutput("plot_caption")
-                     #),
+  column(width = 10,offset = 1, br(),
+         tabsetPanel(tabPanel("Summary",
+                        
+                          uiOutput("results_summary")
+                        
+                     ),
                      tabPanel("Data", 
-                              DT::DTOutput("responses")#,
-                     #)
+                              DT::DTOutput("responses")
+                     ),
+                     tabPanel("About", 
+                              div(style = "font-size:0.8rem;margin-top:30px;margin-bottom:30px;",
+                                  includeMarkdown(system.file("app/www/about.md", package = "acom"))),
+                     )
          )
       )
     )
