@@ -11,10 +11,6 @@ results_tab_div <- function(){
                      ),
                      tabPanel("Data", 
                               DT::DTOutput("responses")
-                     ),
-                     tabPanel("About", 
-                              div(style = "font-size:0.8rem;margin-top:30px;margin-bottom:30px;",
-                                  includeMarkdown(system.file("app/www/about.md", package = "acom"))),
                      )
          )
       )

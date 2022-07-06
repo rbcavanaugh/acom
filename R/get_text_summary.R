@@ -23,6 +23,10 @@ get_text_summary <- function(v){
     dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2)) %>%
     tidyr::drop_na(response)
   
+  valid = v$results %>%
+    dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2)) %>%
+    tidyr::drop_na(response_num)
+  
   table1 = tibble::tribble(
     ~"label", ~"score",
     "Final T-Score Estimate" , as.character(theta),
@@ -31,7 +35,7 @@ get_text_summary <- function(v){
     "95% C.I."               , as.character(x95),
     "90% C.I."               , as.character(x90),
     "68% C.I."               , as.character(x68),
-    "Test Length"            , as.character(v$test_length),
+    "Test Length"            , as.character(nrow(valid)),
     "Items completed"        , as.character(nrow(completed)),
     "Items marked NA"        , as.character(sum(is.na(completed$response_num)))
   ) %>%

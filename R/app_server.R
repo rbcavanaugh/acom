@@ -244,7 +244,6 @@ app_server <- function( input, output, session ) {
     
     responses = response_to_numeric(input$select, v$clarify, v$results$merge_cats[v$itnum])
     v$results$response_num[v$itnum] = responses$response_num
-    print(v$results$response_num)
     v$results$response[v$itnum] = responses$response
     v$results$clarify[v$itnum] = responses$clarify
     v$results$response_merge[v$itnum] = responses$response_merge
@@ -257,15 +256,21 @@ app_server <- function( input, output, session ) {
     
     #print(head(v$results, 3))
     
+    if(sum(!is.na(v$results$response_num))>=12){
+      shinyjs::show("end_test")
+    }
+    
     # if you've reached the max number of responses...go to results
     if (sum(!is.na(v$results$response_num)) == v$test_length) {
       updateNavbarPage(session = session, "mainpage", selected = "results")
+      shinyjs::js$gettime() #end time
       shinyjs::show("download_report-report_download")
       shinyjs::show("download_results-results_download")
+      shinyjs::hide("end_test")
       shinyjs::show("start_over")
     } else {
       # otherwise, iterate on the i
-      #updateRadioButtons(session, "select", selected = character(0))
+      updateRadioButtons(session, "select", selected = character(0))
       
       v$i = v$i + 1
       v$itnum = cat_data$next_item
@@ -283,47 +288,40 @@ app_server <- function( input, output, session ) {
   ############################################################################
   # Bring up the modal
   
-  # observeEvent(input$end_test,{ 
-  #   if(values$i > 1 & input$mainpage == "Assessment"){
-  #     showModal(modalDialog(
-  #       get_endtest_div(),
-  #       easyClose = TRUE,
-  #       size = "m",
-  #       footer = tagList(
-  #         modalButton("Cancel"),
-  #         actionButton("confirm_end_test", "End test/Go to results")
-  #       )
-  #     ))
-  #   }
-  # })
+  observeEvent(input$end_test,{
+    
+      showModal(modalDialog(
+        h3(
+          "Are you sure you want to end the test?"
+        ),
+        br(),
+        tags$p(
+          tags$em("Note: A response entered for the current item will not be saved. To save the current response, 
+               select 'Cancel', click on 'Enter', and then end the test on the next page")),
+        br(),
+        easyClose = TRUE,
+        size = "m",
+        footer = tagList(
+          modalButton("Cancel"),
+          actionButton("confirm_end_test", "End test/Go to results")
+        )
+      ))
+    
+  })
   # 
   # # If end test has been confirmed in the modal. 
-  # observeEvent(input$confirm_end_test,{
-  #   values$endTestEarly = T # marker indicating test was ended manually
-  #   shinyjs::js$gettime() #end time
-  #   if(!is.null(values$key_val)){
-  #     shinyjs::runjs("Mousetrap.trigger('enter');") # hit enter if there is a response to log it
-  #     cat("Logged last response before ending test early \n")
-  #   } else {
-  #     # if there's no current response, nothing to log.
-  #     cat("Ended test early without logging last response \n")
-  #     req(values$irt_out)
-  #     # gets the final number. thisstuff would normally be done if the test
-  #     # was going to end on its own, but have to do it manually here when
-  #     # the test is ended by the user. 
-  #     values$irt_final <-
-  #       get_final_numbers(out = values$irt_out,
-  #                         previous = values$previous,
-  #                         num_previous = values$num_previous)
-  #     shinyjs::show("download_report-report_download")
-  #     shinyjs::show("download_results-results_download")
-  #     values$results_data_long = get_results_data_long(values)
-  #     updateNavbarPage(session, "mainpage", selected = "Results")
-  #     values$current_page = input$mainpage
-  #   }
-  #   removeModal() # modal go bye bye
-  #   
-  # })
+  observeEvent(input$confirm_end_test,{
+    v$endTestEarly = T # marker indicating test was ended manually
+    shinyjs::js$gettime() #end time
+    v$test_length = sum(!is.na(v$results$response))
+    updateNavbarPage(session = session, "mainpage", selected = "results")
+    shinyjs::show("download_report-report_download")
+    shinyjs::show("download_results-results_download")
+    shinyjs::hide("end_test")
+    shinyjs::show("start_over")
+    removeModal() # modal go bye bye
+
+  })
   
   
   ################################## OUTPUTS ################################
@@ -347,7 +345,8 @@ app_server <- function( input, output, session ) {
                        values = v$results%>%
                          dplyr::select(item, itnum, item_content,
                                        content_area, order, response, clarify,
-                                       theta, sem, discrim, b1, b2, b3, merge_cats, response_num, response_merge)) 
+                                       theta, sem, discrim, b1, b2, b3, merge_cats, response_num, response_merge) %>%
+                         dplyr::arrange(order)) 
   # downloadResultsServer(id = "download_results_rescore",
   #                      values = v$results)
    # REPORT 
@@ -403,7 +402,7 @@ app_server <- function( input, output, session ) {
   output$responses <- DT::renderDataTable(server = FALSE, {
     req(input$mainpage == "results")
     df = v$results %>% dplyr::select(item, itnum, item_content,
-                                     content_area, order, response, clarify,
+                                     content_area, order, response, response_num, clarify,
                                      theta, sem) %>%
       dplyr::mutate(theta = round(theta, 4), sem = round(sem, 4)) %>%
       dplyr::arrange(order)

@@ -18,7 +18,7 @@ intro_tab_div <- function() {
                      div(style = "display: inline-block; text-align: left;margin-top:30px;",
                          div(title = tooltip,
                              numericInput("test", label = "Enter test length (number of items)",
-                             min = 12, max = 59, step = 1, value = 12)
+                             min = 12, max = 59, step = 1, value = 59)
                              ),
                          textInput("participant", "Enter Participant ID"),
                          textInput("examiner", "Enter Examiner ID")

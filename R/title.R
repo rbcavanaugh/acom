@@ -23,10 +23,10 @@ pagetitle <- function(){
            # shinyjs::hidden(
            #   downloadResultsUI(id = "download_results_rescore")
            # ),
-         # shinyjs::hidden(
-         #   actionButton("end_test", "End Test",
-         #                style = "background-color:#f8f9fa; border:0px;")
-         # ),
+         shinyjs::hidden(
+           actionButton("end_test", "End Test",
+                        style = "background-color:#f8f9fa; border:0px;")
+         ),
            shinyjs::hidden(
              actionButton("start_over",
                           "Start Over",

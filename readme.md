@@ -4,10 +4,68 @@
 Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 0.4.0.0", "Available from https://github.com/rbcavanaugh/acom.
 
 A description of the psychometric characteristics of the current version of the ACOM is available in Hula, Doyle, Stone, Austermann Hula, Kellough, Wambaugh, Ross, Schumacher, and St. Jacque (2015). Other relevant papers on the development and validation of ACOM score estimates include: Hula, Kellough, & Doyle (2015); Hula, Austermann Hula, & Doyle (2015); Doyle, Hula, Austermann Hula, Stone, Wambaugh, Ross, and Schumacher (2013; and Doyle, McNeil, Le, Hula, & Ventura, M. B. (2008). 
-	
+
+### Using the application
+
+There are a number of ways to use the application (see below). However, please note that server resources are finite, and therefore **we recommend that researchers use option 2 for the following reasons:** (1) The version of the app remains consistent throughout the research study (option 1, 3, and 4 will change based on any updates to the app), (2) There is an inactive time-out limitation on the free online version of the app to keep server costs reasonable. (3) Both the free online version and `shiny::runGithub()` function require a stable internet connection and data will be lost if an internet connection is lost. 
+
+#### 1. Online
+
+The app is now online at  https://rb-cavanaugh.shinyapps.io/acom/
+
+#### 2. Local Installation
+
+The app can be installed locally via `remotes::install_github()`
+
+*Note: It's likely that installing the package will prompt you to update packages on your local machine. This may be necessary if you have much older versions of some packages installed (e.g. the {bslib} package). Sometimes this can cause errors. Please raise an issue in github if there are any issues downloading the app.*
+
+1. Download the package: 
+
+```{r}
+install.packages("remotes")
+remotes::install_github("rbcavanaugh/acom")
+```
+
+If needed, instructions for installing R and Rstudio can be found here: https://rstudio-education.github.io/hopr/
+
+2. Run the app using the built in function
+
+```{r}
+library(acom)
+acom::run_app()
+```
+
+#### 3. Remote access to the app
+
+The app can also be accessed via `shiny::runGitHub()`
+
+1. Necessary packages must be installed first: 
+
+```{r}
+install.packages(c('config', 'golem','shiny','catR','DT','here','shinyjs','tibble','tidyr','dplyr','pkgload','htmltools', 'markdown','magrittr','utils','stats','knitr'))
+```
+
+2. The app can be run straight from Github
+
+```{r}
+shiny::runGitHub("rb-cavanaugh/acom")
+```
+
+*Note: If you get any errors about missing a package, install it, restart your session, and try again*
+
+#### 4. Clone the repository
+
+If desired, the repository can be cloned, and run locally. 
+
+```
+git clone https://github.com/rbcavanaugh/acom.git
+```
+
+A helpful resource for this step is here: https://happygitwithr.com/
+
 ### Adaptive ACOM (59 Items)
 
-This test is a combination of the adaptive ACOM and full-length ACOM tests. This test first administers 59 items from the ACOM bank adaptively, targeting items to provide the most statistical information at the current ability estimate. After every item is administered, an updated ability estimate is obtained and is used to select the next item until all items have been administered. Items are administered based on the examinee's score estimate and based on the item's content category. A content-balancing strategy is used to select items from each domain (talking, writing and number use, comprehension, and naming) to insure that the content balance of each CAT-ACOM administration is reflective of the content balance of the full 59 item bank.
+The current version of the ACOM is fully adaptive 59-item test. This test administers *up to* 59 items adaptively, targeting items to provide the most statistical information at the current ability estimate. After every item is administered, an updated ability estimate is obtained and is used to select the next item until all items have been administered. Items are administered based on the examinee's score estimate and based on the item's content category. A content-balancing strategy is used to select items from each domain (talking, writing and number use, comprehension, and naming) to insure that the content balance of each CAT-ACOM administration is reflective of the content balance of the full 59 item bank.
 
 The final T-score estimate and confidence intervals are produced when the test completes administration of all 59 items or when the test administrator exits the program before the test has completed. The PDF report provides score estimates and confidence intervals for both the 12-item adaptive version and the full 59-item bank.
 

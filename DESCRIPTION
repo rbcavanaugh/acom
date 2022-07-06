@@ -23,7 +23,6 @@ Imports:
     here,
     shinyjs,
     tibble,
-    ggplot2,
     tidyr,
     dplyr,
     pkgload,
