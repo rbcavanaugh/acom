@@ -12,6 +12,7 @@ goCAT <- function(v){
   done = dat$itnum
   
   valid_responses = nrow(dat %>% tidyr::drop_na(response_num))
+  total_responses = nrow(dat %>% tidyr::drop_na(response))
   
   if(all(is.na(dat$response_num))){
     cur_theta = NA
@@ -24,18 +25,25 @@ goCAT <- function(v){
                           method = "EAP", model = "GRM",
                           D = 1, priorDist = "norm",
                           priorPar = c(50, 10),
-                          parInt = c(10, 90, 81))
+                          parInt = c(10, 90, 33))
     
     theta = cur_theta
     
     cur_sem <- catR::semTheta(cur_theta, it = dat[,4:7], x = dat$response_merge,
                         method = "EAP", model = "GRM", D = 1, priorDist = "norm",
-                        priorPar = c(50, 10), parInt = c(10, 90, 81))
+                        priorPar = c(50, 10), parInt = c(10, 90, 33))
     
   }
   
   # 
-  if(length(valid_responses) < v$test_length){
+  if(valid_responses>50){
+    print(">50")
+  print((valid_responses))
+  print(v$test_length)
+  print((total_responses))
+  }
+  
+  if(valid_responses < v$test_length | total_responses < 59){
   it_next <- catR::nextItem(itemBank = bank,
                       model = "GRM",
                       theta = theta,
