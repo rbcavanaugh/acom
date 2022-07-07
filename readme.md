@@ -46,7 +46,7 @@ The app can also be accessed via `shiny::runGitHub()`
 1. Necessary packages must be installed first: 
 
 ```{r}
-install.packages(c('config', 'golem','shiny', 'shinyvalidate', 'catR','DT','here','shinyjs','tibble','tidyr','dplyr','pkgload','htmltools', 'markdown','magrittr','utils','stats','knitr'))
+install.packages(c('config', 'golem','shiny', 'shinyvalidate', 'catR','DT','here','shinyjs','tibble','tidyr','dplyr','pkgload','htmltools', 'markdown','magrittr','utils','stats','knitr', readxl))
 ```
 
 2. The app can be run straight from Github
