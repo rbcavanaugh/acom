@@ -47,26 +47,44 @@ app_server <- function( input, output, session ) {
   ################################################################################ 
   ################################################################################
   
-  # observer for uploading prior administration data
-  # observeEvent(input$file1,{
-  #   
-  #   uploadedData <- uploadData(file_input = input$file1)
-  #   values$previous <- uploadedData$dat
-  #   
-  #   # sets upload conditions
-  #   if(nrow(values$previous)>1){
-  #       values$num_previous <- 1
-  #       values$min_sem <- min(values$previous$sem, na.rm = T)
-  #       shinyjs::enable("next_test")
-  #     # triggered if uploadedData function returns an error
-  #     # resets the upload function. 
-  #   } else {
-  #       showNotification(uploadedData$error, type = "error")
-  #       values$previous <- NULL
-  #       shinyjs::reset("file1")
-  #   }
-  #   
-  # })
+  output$downloadTemplate <- downloadHandler(
+    filename = function() {
+      paste("acom-template", ".xlsx", sep='')
+    },
+    content = function(file) {
+      # myfile <- srcpath <- 'Home/Other Layer/Fancy Template.xlsx'
+      myfile <- srcpath <-  system.file("app/www/acom-template.xlsx", package = "acom")
+      file.copy(myfile, file)
+    }
+  )
+  
+  observeEvent(input$offline_test,{
+  showModal(
+    modalDialog(
+      size = "m",
+      title = "Score offline test (not yet working)",
+      div(align = "center",
+          div(style = "display: inline-block; text-align: left;",
+              div(tags$b("Step 1: Download and complete Excel template file")), br(),
+              downloadButton("downloadTemplate", "Download"), br(),br(),
+              div(tags$b("Step 2: Upload completed file here")), br(),
+              fileInput("file1", label = "Upload offline test excel file")
+          )),
+      
+      footer = modalButton("Cancel"),
+      easyClose = FALSE
+    )
+  )
+  })
+  
+  #observer for uploading prior administration data
+  observeEvent(input$file1,{
+
+    uploadedData <- uploadData(file_input = input$file1)
+    
+    print(head(uploadedData))
+
+  })
   
   ##############################################################################
   ##############################################################################
@@ -145,6 +163,7 @@ app_server <- function( input, output, session ) {
   ##############################################################################
   
   observeEvent(input$start,{
+    shinyjs::hide("offline_test")
     updateNavbarPage(session = session, "mainpage", selected = "acom")
     v$results$examiner = input$examiner
     v$results$participant = input$participant
@@ -242,7 +261,7 @@ app_server <- function( input, output, session ) {
     responses = response_to_numeric(input$select, v$clarify, v$results$merge_cats[v$itnum])
     v$results$response_num[v$itnum] = responses$response_num
     v$results$response[v$itnum] = responses$response
-    v$results$clarify[v$itnum] = responses$clarify
+    v$results$DNA_comm_dis[v$itnum] = responses$clarify
     v$results$response_merge[v$itnum] = responses$response_merge
     
     cat_data = goCAT(v)
@@ -341,7 +360,7 @@ app_server <- function( input, output, session ) {
   downloadResultsServer(id = "download_results",
                        values = v$results%>%
                          dplyr::select(item, itnum, item_content,
-                                       content_area, order, response, clarify,
+                                       content_area, order, response, DNA_comm_dis,
                                        theta, sem, discrim, b1, b2, b3, merge_cats, response_num, response_merge) %>%
                          dplyr::arrange(order)) 
   # downloadResultsServer(id = "download_results_rescore",
@@ -398,8 +417,8 @@ app_server <- function( input, output, session ) {
   
   output$responses <- DT::renderDataTable(server = FALSE, {
     req(input$mainpage == "results")
-    df = v$results %>% dplyr::select(item, itnum, item_content,
-                                     content_area, order, response, response_num, clarify,
+    df = v$results %>% dplyr::select(itnum, item_content,
+                                     content_area, order, response, DNA_comm_dis, response_num,
                                      theta, sem) %>%
       dplyr::mutate(theta = round(theta, 4), sem = round(sem, 4)) %>%
       dplyr::arrange(order)

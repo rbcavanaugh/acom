@@ -31,7 +31,7 @@
 # d$order = NA
 # d$response = NA
 # d$response_num = NA
-# d$clarify = NA
+# d$DNA_comm_dis = NA
 # d$theta = NA
 # d$sem = NA
 

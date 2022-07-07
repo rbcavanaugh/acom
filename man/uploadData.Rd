@@ -4,7 +4,7 @@
 \alias{uploadData}
 \title{Upload previous data}
 \usage{
-uploadData(file_input, rescore = F)
+uploadData(file_input)
 }
 \arguments{
 \item{file_input}{}
