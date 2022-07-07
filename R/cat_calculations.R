@@ -54,7 +54,7 @@ goCAT <- function(v){
                       priorDist = "norm", priorPar = c(50, 10),
                       D = 1, range = c(10, 90), parInt = c(10, 90, 81),
                       infoType = "observed",
-                      randomesque = 1, random.seed = NULL,
+                      randomesque = 1, random.seed = ifelse(isTRUE(getOption("shiny.testmode")), 1, NULL),
                       rule = "length", thr = 20, SETH = NULL,
                       AP = 1, nAvailable = NULL, maxItems = 59, 
                       cbControl = acom_cbControl, cbGroup = acom_cb_group)

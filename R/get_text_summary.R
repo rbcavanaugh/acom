@@ -67,7 +67,13 @@ get_text_summary <- function(v){
     p2 = p2,
     p3 = p3,
     table1 = table1,
-    funding = funding
+    values = list(
+      theta = theta,
+      sem = sem,
+      test_length = nrow(valid),
+      items_completed = nrow(completed),
+      marked_NA = sum(is.na(completed$response_num))
+    )
   ))
   
   

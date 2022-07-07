@@ -24,11 +24,15 @@ downloadReportServer <- function(id, v) {
       output$report_download <- downloadHandler(
         
         # For PDF output, change this to "report.pdf"
-        filename = "report.pdf",
+        filename = paste(as.character(Sys.Date()),
+                         unique(v$results$participant), "acom.pdf", sep = "_"
+        ),
         content = function(file) {
           withProgress(message = 'Rendering, please wait!', {
             tempReport <- system.file("report.Rmd", package = "acom")
-            file.copy("report.Rmd", tempReport, overwrite = TRUE)
+            file.copy(paste(as.character(Sys.Date()),
+                            unique(v$results$participant), "acom.pdf", sep = "_"
+            ), tempReport, overwrite = TRUE)
             
             # Set up parameters to pass to Rmd document
             params <- list(

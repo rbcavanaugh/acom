@@ -27,9 +27,9 @@ intro_tab_div <- function() {
                      actionButton("next1", "Next")
                  )
                  ),
-               column(width = 12, 
+               column(width = 10, offset = 1, 
                       div(align = "left",
-                          tags$div(funding, style = "color:black; font-size:0.7rem;padding:32px 48px;"))
+                          tags$div(funding, id="funding"))
                )
              ),
              tabPanelBody(value = "intro2",

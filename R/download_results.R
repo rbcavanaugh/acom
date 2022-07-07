@@ -25,7 +25,7 @@ downloadResultsServer <- function(id, values, in_progress) {
     output$results_download <- downloadHandler(
       filename = function() {
         paste(as.character(Sys.Date()),
-              "pnt.csv", sep = "_"
+              unique(values$participant), "acom.csv", sep = "_"
         )
       },
       content = function(file) {

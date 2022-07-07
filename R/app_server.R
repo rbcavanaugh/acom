@@ -14,7 +14,7 @@ app_server <- function( input, output, session ) {
   # ------------------------------------------------------------------------------
   ################################################################################
   ################################################################################
-  
+
   v = reactiveValues(
     i = 1,
     itnum = 1,
@@ -33,13 +33,11 @@ app_server <- function( input, output, session ) {
   # runs a jsCode snippet from extendshinyJS (see app_ui)
   # this gets the users time
   # when it changes, it is saved in the reactive values
-  shinyjs::js$gettime()
-  observeEvent(input$jstime,{
-    dt <- input$jstime # establishes datetime when app opens for saving
-    v$datetime <- as.character(strptime(dt, format = '%a %b %d %Y %H:%M:%S GMT%z'))
-    cat("app was opened on", v$datetime, "\n",
-        "--------------------------------", "\n")
-  }, once = T) # we only want this to happen once
+  # observeEvent(input$jstime,{
+  #   v$datetime <- as.character(strptime(dt, format = '%a %b %d %Y %H:%M:%S GMT%z'))
+  #   cat("app was opened on", v$datetime, "\n",
+  #       "--------------------------------", "\n")
+  # }, once = T) # we only want this to happen once
 
   ################################################################################
   ################################## UPLOADS #####################################
@@ -169,9 +167,6 @@ app_server <- function( input, output, session ) {
     v$results$participant = input$participant
     #v$test_length = ifelse(input$test=="custom", input$custom, input$test)
     v$test_length = input$test
-    v$start_time = as.character(strptime(input$jstime,
-                                              format = '%a %b %d %Y %H:%M:%S GMT%z'))
-    cat("Testing started on", v$start_time, "\n")
   })
   
   
@@ -279,7 +274,6 @@ app_server <- function( input, output, session ) {
     # if you've reached the max number of responses...go to results
     if (sum(!is.na(v$results$response_num)) == v$test_length) {
       updateNavbarPage(session = session, "mainpage", selected = "results")
-      shinyjs::js$gettime() #end time
       shinyjs::show("download_report-report_download")
       shinyjs::show("download_results-results_download")
       shinyjs::hide("end_test")
@@ -328,7 +322,6 @@ app_server <- function( input, output, session ) {
   # # If end test has been confirmed in the modal. 
   observeEvent(input$confirm_end_test,{
     v$endTestEarly = T # marker indicating test was ended manually
-    shinyjs::js$gettime() #end time
     v$test_length = sum(!is.na(v$results$response))
     updateNavbarPage(session = session, "mainpage", selected = "results")
     shinyjs::show("download_report-report_download")
@@ -361,7 +354,7 @@ app_server <- function( input, output, session ) {
                        values = v$results%>%
                          dplyr::select(item, itnum, item_content,
                                        content_area, order, response, DNA_comm_dis,
-                                       theta, sem, discrim, b1, b2, b3, merge_cats, response_num, response_merge) %>%
+                                       theta, sem, discrim, b1, b2, b3, merge_cats, response_num, response_merge, participant, examiner) %>%
                          dplyr::arrange(order)) 
   # downloadResultsServer(id = "download_results_rescore",
   #                      values = v$results)
@@ -394,6 +387,8 @@ app_server <- function( input, output, session ) {
   output$results_summary <- renderUI({
     req(input$mainpage == "results")
     summary_list = get_text_summary(v)
+    
+    v$values = summary_list$values
     
     d = div(align = "left",
             style="margin-top:30px; padding-left:24px;padding-right:24px;",
@@ -465,28 +460,10 @@ app_server <- function( input, output, session ) {
   ################################################################################
   ################################################################################
   
-  # observeEvent(input$mainpage,{
-  #   values$current_page = input$mainpage
-  #   cat(paste("The page updated to", values$current_page, "\n"))
-  #   if(values$current_page == "Results"){
-  #     if(!isTruthy(values$score_uploaded_test)){
-  #       values$end_time = as.character(strptime(input$jstime,
-  #                                               format = '%a %b %d %Y %H:%M:%S GMT%z'))
-  #       values$duration = as.POSIXlt(values$end_time)-as.POSIXlt(values$start_time)
-  #       cat("Testing ended on", values$end_time, "\n",
-  #           "Total testing time was", round(values$duration[[1]], 2),
-  #                                         units(values$duration), "\n")
-  #     }}
-  # })
-  # 
-  # # This makes the above data available after running unit test.
-  # exportTestValues(irt_final = values$irt_final,
-  #                  results = values$results_data_long,
-  #                  current_page = values$current_page#,
-  #                  #values = values
-  # )
-  
-  
+  # This makes the above data available after running unit test.
+  exportTestValues(values = v$values,
+                   results = v$results,
+                   current_page = input$mainpage)
   
   # ----------------------------------------------------------------------------
   ##############################################################################

@@ -30,7 +30,14 @@ install.packages("remotes")
 remotes::install_github("rbcavanaugh/acom")
 ```
 
-If needed, instructions for installing R and Rstudio can be found here: https://rstudio-education.github.io/hopr/
+If needed, instructions for installing R and Rstudio can be found here: https://rstudio-education.github.io/hopr/. 
+
+To enable the report function, you will also need to install a LaTeX distribution. 
+
+```{r}
+install.packages("tinytext")
+tinytex::install_tinytex()
+```
 
 2. Run the app using the built in function
 
@@ -39,7 +46,7 @@ library(acom)
 acom::run_app()
 ```
 
-#### 3. Remote access to the app
+#### 3. Remote access to the app, run locally
 
 The app can also be accessed via `shiny::runGitHub()`
 
@@ -47,6 +54,13 @@ The app can also be accessed via `shiny::runGitHub()`
 
 ```{r}
 install.packages(c('config', 'golem','shiny', 'shinyvalidate', 'catR','DT','shinyjs','tibble','tidyr','dplyr','pkgload','htmltools', 'markdown','magrittr', 'knitr', readxl))
+```
+
+You will also have to install a LaTeX distribution if you haven't previously. 
+
+```{r}
+install.packages("tinytext")
+tinytex::install_tinytex()
 ```
 
 2. The app can be run straight from Github

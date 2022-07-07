@@ -1,5 +1,5 @@
 library(testthat)
-library(pnt)
-library(shinytest)
+library(shinytest2)
+library(acom)
 
-testthat::test_local()
+testthat::test_local(path = here::here("tests", "testthat"))

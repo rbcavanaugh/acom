@@ -91,9 +91,10 @@ input[value="Doesn't apply to me"] + span{
   background-color: #f2f5f7;
   border: 1px solid rgba(0, 0, 0, .3);
   border-radius:5px;
-  padding: 3%;
+  padding: 2%;
   margin-bottom:0;
-  font-size: 0.8em;
+  font-size: 0.75em;
+  margin-top: 32px;
 }
 
 #numitems{
