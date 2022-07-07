@@ -47,35 +47,35 @@ app_server <- function( input, output, session ) {
   ################################################################################ 
   ################################################################################
   
-  output$downloadTemplate <- downloadHandler(
-    filename = function() {
-      paste("acom-template", ".xlsx", sep='')
-    },
-    content = function(file) {
-      # myfile <- srcpath <- 'Home/Other Layer/Fancy Template.xlsx'
-      myfile <- srcpath <-  system.file("app/www/acom-template.xlsx", package = "acom")
-      file.copy(myfile, file)
-    }
-  )
-  
-  observeEvent(input$offline_test,{
-  showModal(
-    modalDialog(
-      size = "m",
-      title = "Score offline test (not yet working)",
-      div(align = "center",
-          div(style = "display: inline-block; text-align: left;",
-              div(tags$b("Step 1: Download and complete Excel template file")), br(),
-              downloadButton("downloadTemplate", "Download"), br(),br(),
-              div(tags$b("Step 2: Upload completed file here")), br(),
-              fileInput("file1", label = "Upload offline test excel file")
-          )),
-      
-      footer = modalButton("Cancel"),
-      easyClose = FALSE
-    )
-  )
-  })
+  # output$downloadTemplate <- downloadHandler(
+  #   filename = function() {
+  #     paste("acom-template", ".xlsx", sep='')
+  #   },
+  #   content = function(file) {
+  #     # myfile <- srcpath <- 'Home/Other Layer/Fancy Template.xlsx'
+  #     myfile <- srcpath <-  system.file("app/www/acom-template.xlsx", package = "acom")
+  #     file.copy(myfile, file)
+  #   }
+  # )
+  # 
+  # observeEvent(input$offline_test,{
+  # showModal(
+  #   modalDialog(
+  #     size = "m",
+  #     title = "Score offline test (not yet working)",
+  #     div(align = "center",
+  #         div(style = "display: inline-block; text-align: left;",
+  #             div(tags$b("Step 1: Download and complete Excel template file")), br(),
+  #             downloadButton("downloadTemplate", "Download"), br(),br(),
+  #             div(tags$b("Step 2: Upload completed file here")), br(),
+  #             fileInput("file1", label = "Upload offline test excel file")
+  #         )),
+  #     
+  #     footer = modalButton("Cancel"),
+  #     easyClose = FALSE
+  #   )
+  # )
+  # })
   
   #observer for uploading prior administration data
   observeEvent(input$file1,{

@@ -24,7 +24,6 @@ Imports:
     shinyvalidate,
     catR,
     DT,
-    here,
     shinyjs,
     tibble,
     tidyr,
