@@ -12,11 +12,11 @@ acom_tab_div <- function(values){
            column(width = 10,offset = 1,align = "center",
            uiOutput("questionText"),
          )),
-         shiny::fluidRow(style = "min-height:560px;",
+         shiny::fluidRow(style = "min-height:510px;",
              shiny::column(width = 8, offset = 4,
                div(id = "stim",
                    div(class = "container",
-                      tags$img(src = "assets/acom_scale_radio.png", style = "height:550px;position:absolute;"),
+                      tags$img(src = "assets/acom_scale_radio.png", style = "height:500px;position:absolute;"),
                        radioButtons("select",label = NULL, inline = TRUE, selected = character(0),
                                    choices = c(
                                      "Doesn't apply to me",

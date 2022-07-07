@@ -2,7 +2,7 @@
 #' 
 #' @export
 results_tab_div <- function(){
-  fluidRow(
+  fluidRow(style = "margin-bottom:100px;",
   column(width = 10,offset = 1, br(),
          tabsetPanel(tabPanel("Summary",
                         

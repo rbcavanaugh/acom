@@ -32,8 +32,8 @@ pagetitle <- function(){
                           "Start Over",
                           style = "background-color:#f8f9fa; border:0px;")
            ),
-         actionButton("info", icon =  shiny::icon("info"), label = NULL,
-                      style = "font-size: 0.8rem;background-color:#f8f9fa; border:0px;")
+         actionButton("info", icon =  shiny::icon("readme"), label = NULL,
+                      style = "font-size: 1rem;background-color:#f8f9fa; border:0px;")
      )
      )
   return(title)

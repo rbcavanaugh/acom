@@ -1,10 +1,10 @@
-**Acom 3.0.2 Technical Documentation**
+**Acom 4.0.0 Technical Documentation**
 
 A description of the psychometric characteristics of the current version of the ACOM is available in Hula, Doyle, Stone, Austermann Hula, Kellough, Wambaugh, Ross, Schumacher, and St. Jacque (2015). Other relevant papers on the development and validation of ACOM score estimates include: Hula, Kellough, & Doyle (2015); Hula, Austermann Hula, & Doyle (2015); Doyle, Hula, Austermann Hula, Stone, Wambaugh, Ross, and Schumacher (2013; and Doyle, McNeil, Le, Hula, & Ventura, M. B. (2008). 
 	
 **Adaptive ACOM (59 Items)**
 
-The current version of the ACOM is fully adaptive 59-item test. This test administers *up to* 59 items adaptively, targeting items to provide the most statistical information at the current ability estimate. After every item is administered, an updated ability estimate is obtained and is used to select the next item until all items have been administered. Items are administered based on the examinee's score estimate and based on the item's content category. A content-balancing strategy is used to select items from each domain (talking, writing and number use, comprehension, and naming) to insure that the content balance of each CAT-ACOM administration is reflective of the content balance of the full 59 item bank.
+The current version of the ACOM is a fully adaptive 59-item test. This test administers *up to* 59 items adaptively, targeting items to provide the most statistical information at the current ability estimate. After every item is administered, an updated ability estimate is obtained and is used to select the next item until all items have been administered. Items are administered based on the examinee's score estimate and based on the item's content category. A content-balancing strategy is used to select items from each domain (talking, writing and number use, comprehension, and naming) to insure that the content balance of each CAT-ACOM administration is reflective of the content balance of the full 59 item bank.
 
 The final T-score estimate and confidence intervals are produced when the test completes administration of all 59 items or when the test administrator exits the program before the test has completed. The PDF report provides score estimates and confidence intervals for both the 12-item adaptive version and the full 59-item bank.
 

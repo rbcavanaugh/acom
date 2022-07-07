@@ -124,6 +124,12 @@ a large number of times under identical conditions, 95 out of 100 of the
 of 95% confidence intervals would contain the true value of the communicative
 functioning score.
 
+
+ID: `r unique(params$v$results$participant)`  
+Examiner: `r unique(params$v$results$examiner)`  
+Date: `r Sys.Date()`  
+Item parameter set: January2015_59ItemParamSet
+
 <br>
 
 **Test: Adaptive ACOM with `r params$v$test_length` items administered.**
@@ -132,15 +138,11 @@ functioning score.
 knitr::kable(table1, booktabs = TRUE, col.names = NULL)
 ```
 
-- Item parameter set used = January2015_59ItemParamSet
-
 **Test: 12-item Adaptive ACOM short form**
 
 ```{r, echo = FALSE}
 knitr::kable(table2, booktabs = TRUE, col.names = NULL)
 ```
-
-- Item parameter set used = January2015_59ItemParamSet
 
 ### About this report
 

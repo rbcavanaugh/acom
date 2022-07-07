@@ -13,63 +13,63 @@ input[type="radio"] + span {
   color:transparent;
 }
 input[value="Completely"] {
-  top:45px;
-  left:213px;
+  top:41px;
+  left:195px;
 }
 
 input[value="Completely"] +span{
-  top:45px;
-  left:218px;
+  top:41px;
+  left:202px;
   cursor: pointer;
   padding-bottom: 10px;
 }
 
 input[value="Mostly"] {
-  top:109px;
-  left:213px;
+  top:99px;
+  left:195px;
 }
 
 input[value="Mostly"] + span{
-  top:109px;
-  left:218px;
+  top:99px;
+  left:202px;
   cursor: pointer;
   padding-bottom: 10px;
 }
 
 input[value="Somewhat"] {
-  top:250px;
-  left:213px;
+  top:227px;
+  left:195px;
 }
 
 input[value="Somewhat"] + span{
-  top:250px;
-  left:218px;
+  top:227px;
+  left:202px;
   cursor: pointer;
   padding-bottom: 10px;
 }
 
 input[value="Not very"] {
-  top:392px;
-  left:213px;
+  top:356px;
+  left:195px;
 }
 
 input[value="Not very"] + span {
-  top:392px;
-  left:218px;
+  top:356px;
+  left:202px;
   cursor: pointer;
   padding-bottom: 10px;
 }
 
 
 input[value="Doesn't apply to me"] {
-  top:485px;
-  left:213px;
+  top:441px;
+  left:195px;
 }
 
 
 input[value="Doesn't apply to me"] + span{
-  top:485px;
-  left:218px;
+  top:441px;
+  left:202px;
   cursor: pointer;
   padding-bottom: 10px;
   padding-right:5px;
@@ -107,4 +107,16 @@ input[value="Doesn't apply to me"] + span{
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: transparent;
     background-color: transparent;
+}
+
+.navbar{
+  padding:0.25rem 0rem;
+}
+
+.nav-hidden{
+  height:0px;
+}
+
+.nav-link{
+  padding:0.1rem;
 }
