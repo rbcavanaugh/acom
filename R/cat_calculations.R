@@ -54,7 +54,7 @@ goCAT <- function(v){
                       priorDist = "norm", priorPar = c(50, 10),
                       D = 1, range = c(10, 90), parInt = c(10, 90, 81),
                       infoType = "observed",
-                      randomesque = 1, random.seed = ifelse(isTRUE(getOption("shiny.testmode")), 1, NULL),
+                      randomesque = 1, random.seed = check_test_random(),
                       rule = "length", thr = 20, SETH = NULL,
                       AP = 1, nAvailable = NULL, maxItems = 59, 
                       cbControl = acom_cbControl, cbGroup = acom_cb_group)
@@ -134,3 +134,14 @@ getTxt <- function(v) {
   return(txt)
 }
 
+#' check test random
+#'
+#' @return random seed if test mode
+#' @export
+check_test_random <- function(){
+  if(isTRUE(getOption("shiny.testmode"))){
+    return(1)
+  } else {
+    return(NULL)
+  } 
+}

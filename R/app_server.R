@@ -212,18 +212,6 @@ app_server <- function( input, output, session ) {
             div(actionButton("no",
                              tags$b("Due to some other reason"),
                              width = "100%"), style="margin:20px;")
-            
-            # shinyWidgets::radioGroupButtons(
-            #   "clarify",
-            #   label = NULL,
-            #   choices = c(
-            #     "No, due to some other reason" = "no",
-            #     "Yes, due to my communication difficulties" =
-            #       "yes"
-            #   ),
-            #   selected = character(0)
-            #   
-            # )
           ),
           footer = modalButton("Cancel"),
           easyClose = FALSE

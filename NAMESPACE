@@ -2,6 +2,7 @@
 
 export("%>%")
 export(acom_tab_div)
+export(check_test_random)
 export(downloadReportServer)
 export(downloadReportUI)
 export(downloadResultsServer)
