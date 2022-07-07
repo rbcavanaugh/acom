@@ -207,10 +207,10 @@ app_server <- function( input, output, session ) {
             align = "center",
             style = "margin-top: 24px;",
             div(actionButton("yes",
-                             tags$b("Yes, due to my communication difficulties"),
+                             tags$b("Due to my communication difficulties"),
                                     width = "100%"), style="margin:20px;"),
             div(actionButton("no",
-                             tags$b("No, due to some other reason"),
+                             tags$b("Due to some other reason"),
                              width = "100%"), style="margin:20px;")
             
             # shinyWidgets::radioGroupButtons(

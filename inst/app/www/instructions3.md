@@ -2,7 +2,7 @@ Whenever you answer "Does Not Apply", I will ask you the following question:
 
 <br>
 
-That's because
+Is this due to your communication difficulties or some other reason?
 
 <br>
 
