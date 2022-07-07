@@ -12,7 +12,8 @@ goCAT <- function(v){
   done = dat$itnum
   
   valid_responses = nrow(dat %>% tidyr::drop_na(response_num))
-  total_responses = nrow(dat %>% tidyr::drop_na(response))
+  total_responses = nrow(dat)
+  
   
   if(all(is.na(dat$response_num))){
     cur_theta = NA
@@ -35,31 +36,25 @@ goCAT <- function(v){
     
   }
   
-  # 
-  if(valid_responses>50){
-    print(">50")
-  print((valid_responses))
-  print(v$test_length)
-  print((total_responses))
-  }
   
-  if(valid_responses < v$test_length | total_responses < 59){
-  it_next <- catR::nextItem(itemBank = bank,
-                      model = "GRM",
-                      theta = theta,
-                      out = done,
-                      x = NULL,
-                      criterion = "MFI",
-                      method = "EAP",
-                      priorDist = "norm", priorPar = c(50, 10),
-                      D = 1, range = c(10, 90), parInt = c(10, 90, 81),
-                      infoType = "observed",
-                      randomesque = 1, random.seed = check_test_random(),
-                      rule = "length", thr = 20, SETH = NULL,
-                      AP = 1, nAvailable = NULL, maxItems = 59, 
-                      cbControl = acom_cbControl, cbGroup = acom_cb_group)
+  if(valid_responses < v$test_length & total_responses < 59){
+
+        it_next <- catR::nextItem(itemBank = bank,
+                        model = "GRM",
+                        theta = theta,
+                        out = done,
+                        x = NULL,
+                        criterion = "MFI",
+                        method = "EAP",
+                        priorDist = "norm", priorPar = c(50, 10),
+                        D = 1, range = c(10, 90), parInt = c(10, 90, 81),
+                        infoType = "observed",
+                        randomesque = 1, random.seed = check_test_random(),
+                        rule = "length", thr = 20, SETH = NULL,
+                        AP = 1, nAvailable = NULL, maxItems = 59, 
+                        cbControl = acom_cbControl, cbGroup = acom_cb_group)
   
-  next_item = it_next$item
+        next_item = it_next$item
   } else {
     next_item = NA
   }

@@ -259,8 +259,11 @@ app_server <- function( input, output, session ) {
       shinyjs::show("end_test")
     }
     
+    valid_responses = sum(!is.na(v$results$response_num))
+    complete_responses = sum(!is.na(v$results$response))
+    
     # if you've reached the max number of responses...go to results
-    if (sum(!is.na(v$results$response_num)) == v$test_length) {
+    if (valid_responses == v$test_length | complete_responses == 59) {
       updateNavbarPage(session = session, "mainpage", selected = "results")
       shinyjs::show("download_report-report_download")
       shinyjs::show("download_results-results_download")
