@@ -407,8 +407,11 @@ app_server <- function( input, output, session ) {
     DT::datatable(df,
                   rownames = FALSE,
                   options = list(rowCallback = DT::JS(rowCallback),
-                                 dom = 'frtip',
+                                 dom = 'tir',
                                  scrollX = TRUE,
+                                 scrollY = '60vh',
+                                 scrollCollapse = TRUE,
+                                 paging = FALSE,
                                  autoWidth = TRUE,
                                  columnDefs = list(list(width = '40%', targets = (2)))),
                   filter = list(position = 'bottom', clear = FALSE)

@@ -6,7 +6,7 @@
 \alias{acom-package}
 \title{acom: Aphasia Communication Outcome Measure}
 \description{
-A Shiny web-app for administering and scoring the computer adaptive Philadelphia Naming Test.
+A Shiny web-app for administering and scoring the Aphasia Communication Outcome Measure
 }
 \seealso{
 Useful links:
@@ -22,6 +22,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Alexander Swiderski
   \item William D. Hula
 }
 

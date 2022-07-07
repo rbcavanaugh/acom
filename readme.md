@@ -5,6 +5,8 @@ An R package and shiny web-app for administering the Aphasia Communication Outco
 
 A description of the psychometric characteristics of the current version of the ACOM is available in Hula, Doyle, Stone, Austermann Hula, Kellough, Wambaugh, Ross, Schumacher, and St. Jacque (2015). Other relevant papers on the development and validation of ACOM score estimates include: Hula, Kellough, & Doyle (2015); Hula, Austermann Hula, & Doyle (2015); Doyle, Hula, Austermann Hula, Stone, Wambaugh, Ross, and Schumacher (2013; and Doyle, McNeil, Le, Hula, & Ventura, M. B. (2008). 
 
+Comments, feedback, and bug reports are encouraged. Please submit as an issue: https://github.com/rbcavanaugh/acom/issues
+
 Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 4.0.0, Available from https://github.com/rbcavanaugh/acom.
 
 ### Using the application
