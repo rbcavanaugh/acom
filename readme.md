@@ -5,7 +5,7 @@ An R package and shiny web-app for administering the Aphasia Communication Outco
 
 A description of the psychometric characteristics of the current version of the ACOM is available in Hula, Doyle, Stone, Austermann Hula, Kellough, Wambaugh, Ross, Schumacher, and St. Jacque (2015). Other relevant papers on the development and validation of ACOM score estimates include: Hula, Kellough, & Doyle (2015); Hula, Austermann Hula, & Doyle (2015); Doyle, Hula, Austermann Hula, Stone, Wambaugh, Ross, and Schumacher (2013; and Doyle, McNeil, Le, Hula, & Ventura, M. B. (2008). 
 
-Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 0.4.0.0, Available from https://github.com/rbcavanaugh/acom.
+Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 4.0.0, Available from https://github.com/rbcavanaugh/acom.
 
 ### Using the application
 
@@ -65,7 +65,11 @@ git clone https://github.com/rbcavanaugh/acom.git
 
 A helpful resource for this step is here: https://happygitwithr.com/
 
-### Adaptive ACOM (59 Items)
+### Prior versions
+
+Prior versions of the ACOM application were available through a java-based web application (the latest being 3.0.2). However, updates to java mean that this application does not consistently save a results file. Using older, unstable versions of java may contain potential security concerns. Thus using the prior version of the ACOM java application is not recommended. 
+
+### About the ACOM
 
 The current version of the ACOM is a fully adaptive 59-item test. This test administers *up to* 59 items adaptively, targeting items to provide the most statistical information at the current ability estimate. After every item is administered, an updated ability estimate is obtained and is used to select the next item until all items have been administered. Items are administered based on the examinee's score estimate and based on the item's content category. A content-balancing strategy is used to select items from each domain (talking, writing and number use, comprehension, and naming) to insure that the content balance of each CAT-ACOM administration is reflective of the content balance of the full 59 item bank.
 
@@ -81,9 +85,6 @@ The EAP procedure assumes that each score estimate is drawn from a normal distri
 
 The primary advantage of EAP scoring over maximum likelihood scoring is that an EAP estimate can obtained for any observed set of responses. By contrast, finite maximum likelihood estimates cannot be obtained for extreme (all “not very” or all “completely”) response strings. The literature suggests that the EAP procedure provides a high level of average accuracy for score estimates if the prior is correct (Embretson & Reise, 2000). In case of the ACOM, the distribution of score estimates for the 329-person calibration sample reported by Hula and colleagues (2015) closely approximated normality (skew  = 0.11, kurtosis = -0.14). For an in-depth description of the EAP procedure, see Baker & Kim (2004).
 
-### Prior versions
-
-Prior versions of the ACOM application were available through a java-based web application (the latest being 3.0.2). However, updates to java mean that this application does not consistently save a results file. The prior application thus requires using older, unstable versions of java with potential security concerns. Thus using the prior version of the ACOM java application is not recommended. 
 
 ### References
 
