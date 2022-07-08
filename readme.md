@@ -13,7 +13,7 @@ Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia C
 
 There are a number of ways to use the application (see below). However, please note that server resources are finite, and therefore **we ask that researchers use option 2 for the following reasons:** (1) The version of the app remains consistent throughout the research study (option 1, 3, and 4 may change based on any updates to the app), (2) There is an inactive time-out limitation on the free online version of the app to keep server costs reasonable, which means that a long break (>15 minutes) without activity may cause you to lose your current session. (3) Both the free online version and `shiny::runGithub()` function require a stable internet connection and data will be lost if an internet connection is lost. 
 
-**Detailed installation instructions can be found here: https://github.com/rbcavanaugh/acom/wiki/Installation-Help**
+**Detailed installation instructions can be found here: https://github.com/rbcavanaugh/acom/wiki**
 
 #### 1. Online
 
