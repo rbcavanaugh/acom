@@ -5,28 +5,34 @@
 #' @export
 get_text_summary <- function(v){
   
+  # get theta and sem for the final item administered.
   final = v$results %>%
     tidyr::drop_na(response) %>%
     dplyr::filter(order == max(order, na.rm = TRUE)) %>%
     dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2))
   
+  # save theta, sem, z-core, and whether or not the zscore is pos or neg
+  # in variables that are easy to use in glue below
   theta = final$theta
   sem = final$sem
   z = (theta-50)/10
   ab = ifelse(z>=0, "above", "below")
   
+  # confidence intervals
   x95 = glue::glue("{round(theta-1.96  *sem, 2)}, {round(theta+1.96  *sem, 2)}")
   x90 = glue::glue("{round(theta-1.645 *sem, 2)}, {round(theta+1.645 *sem, 2)}")
   x68 = glue::glue("{round(theta-1     *sem, 2)}, {round(theta+1     *sem, 2)}")
   
+  # completed items
   completed = v$results %>%
     dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2)) %>%
     tidyr::drop_na(response)
-  
+  # valid items (excluding DNA + na as it returns NA)
   valid = v$results %>%
     dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2)) %>%
     tidyr::drop_na(response_num)
   
+  # return results table
   table1 = tibble::tribble(
     ~"label", ~"score",
     "Final T-Score Estimate" , as.character(theta),

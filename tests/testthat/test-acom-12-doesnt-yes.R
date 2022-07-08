@@ -6,7 +6,7 @@ test_that("acom-12-mostly", {
   
   app <- AppDriver$new(app_dir = here::here(), height = 800, width = 1200, seed = 1)
   
-  app$set_inputs(test = 59)
+  #app$set_inputs(test = 59)
   app$set_inputs(participant = "one")
   app$set_inputs(examiner = "two")
   app$click("next1")

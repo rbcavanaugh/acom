@@ -8,14 +8,14 @@
 #' @export
 uploadData <- function(file_input){
 
-  file <- file_input
-  # check upload
-  req(file)
-  # save upload
-  dat <- readxl::read_excel(file$datapath, sheet = "responses")
-
-  return(dat)
- 
+  # file <- file_input
+  # # check upload
+  # req(file)
+  # # save upload
+  # dat <- readxl::read_excel(file$datapath, sheet = "responses")
+  # 
+  # return(dat)
+  # 
 }
 
 

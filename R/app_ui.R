@@ -25,10 +25,10 @@ app_ui <- function(request) {
       # sys.Time() gets the servers time, but not always the users time due
       # to timezone changes
       shinyjs::extendShinyjs(text = jsCode, functions = "gettime"),
-      # allows us to use keys to enter responses
+      # allows us to use keys to enter responses...not working yet
        # keys::useKeys(),
        # keys::keysInput("enter_key", "enter"), # enter key and space bar used to progress response
-     # keys::keysInput("end_test", end_test_key), # esc is the end test key
+       # keys::keysInput("end_test", end_test_key), # esc is the end test key
       
       ################################### layout starts here ######################### 
       
