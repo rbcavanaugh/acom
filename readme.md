@@ -11,7 +11,9 @@ Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia C
 
 ### Using the application
 
-There are a number of ways to use the application (see below). However, please note that server resources are finite, and therefore **we recommend that researchers use option 2 for the following reasons:** (1) The version of the app remains consistent throughout the research study (option 1, 3, and 4 will change based on any updates to the app), (2) There is an inactive time-out limitation on the free online version of the app to keep server costs reasonable. (3) Both the free online version and `shiny::runGithub()` function require a stable internet connection and data will be lost if an internet connection is lost. 
+There are a number of ways to use the application (see below). However, please note that server resources are finite, and therefore **we ask that researchers use option 2 for the following reasons:** (1) The version of the app remains consistent throughout the research study (option 1, 3, and 4 may change based on any updates to the app), (2) There is an inactive time-out limitation on the free online version of the app to keep server costs reasonable, which means that a long break (>15 minutes) without activity may cause you to lose your current session. (3) Both the free online version and `shiny::runGithub()` function require a stable internet connection and data will be lost if an internet connection is lost. 
+
+**Detailed installation instructions can be found here: https://github.com/rbcavanaugh/acom/wiki/Installation-Help**
 
 #### 1. Online
 
@@ -21,55 +23,10 @@ The app is now online at  https://rb-cavanaugh.shinyapps.io/acom/
 
 The app can be installed locally via `remotes::install_github()`
 
-*Note: It's likely that installing the package will prompt you to update packages on your local machine. This may be necessary if you have much older versions of some packages installed (e.g. the {bslib} package). Sometimes this can cause errors. Please raise an issue in github if there are any issues downloading the app.*
-
-1. Download the package: 
-
-```{r}
-install.packages("remotes")
-remotes::install_github("rbcavanaugh/acom")
-```
-
-If needed, instructions for installing R and Rstudio can be found here: https://rstudio-education.github.io/hopr/. 
-
-To enable the report function, you will also need to install a LaTeX distribution. 
-
-```{r}
-install.packages("tinytext")
-tinytex::install_tinytex()
-```
-
-2. Run the app using the built in function
-
-```{r}
-library(acom)
-acom::run_app()
-```
-
 #### 3. Remote access to the app, run locally
 
 The app can also be accessed via `shiny::runGitHub()`
 
-1. Necessary packages must be installed first: 
-
-```{r}
-install.packages(c('config', 'golem','shiny', 'shinyvalidate', 'catR','DT','shinyjs','tibble','tidyr','dplyr','pkgload','htmltools', 'markdown','magrittr', 'knitr', readxl))
-```
-
-You will also have to install a LaTeX distribution if you haven't previously. 
-
-```{r}
-install.packages("tinytext")
-tinytex::install_tinytex()
-```
-
-2. The app can be run straight from Github
-
-```{r}
-shiny::runGitHub("rb-cavanaugh/acom")
-```
-
-*Note: If you get any errors about missing a package, install it, restart your session, and try again*
 
 #### 4. Clone the repository
 
