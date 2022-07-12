@@ -441,7 +441,8 @@ app_server <- function( input, output, session ) {
   # This makes the above data available after running unit test.
   exportTestValues(values = v$values,
                    results = v$results,
-                   current_page = input$mainpage)
+                   current_page = input$mainpage,
+                   itnum = v$itnum)
   
   # ----------------------------------------------------------------------------
   ##############################################################################

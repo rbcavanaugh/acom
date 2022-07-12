@@ -53,3 +53,11 @@ usethis::use_data(
   funding,
   tooltip,
   internal = T, overwrite = T)
+
+
+# 
+# t = d %>% select(item, itnum)
+# t2 = readxl::read_excel(here::here("tests", "testthat", "files", "bu26.xlsx"),col_names = c("ignore", "item", "item_content", "response", "response_eq", "theta", "sem", "time")) %>%
+#   left_join(t, by = "item")
+# 
+# write.csv(t2, here::here("tests", "testthat", "files", "bu26.csv"),row.names = FALSE)

@@ -12,7 +12,7 @@ response_to_numeric(select, clarify, merge)
 \item{clarify}{ask for clarification for doesn't apply}
 }
 \value{
-numeric response
+single row dataframe with response, response_num, response_merge, and clarify
 }
 \description{
 response_to_numeric

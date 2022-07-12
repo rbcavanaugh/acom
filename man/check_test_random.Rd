@@ -7,7 +7,7 @@
 check_test_random()
 }
 \value{
-random seed if test mode
+random seed if test mode for consistent responses
 }
 \description{
 check test random

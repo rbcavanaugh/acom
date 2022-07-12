@@ -10,7 +10,7 @@ goCAT(v)
 \item{v}{all values}
 }
 \value{
-list of three irt parameters
+list of three irt parameters theta, sem, next_item
 }
 \description{
 goCat
