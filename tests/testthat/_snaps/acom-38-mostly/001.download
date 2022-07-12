@@ -1,60 +1,60 @@
 "item","itnum","item_content","content_area","order","response","DNA_comm_dis","theta","sem","discrim","b1","b2","b3","merge_cats","response_num","response_merge","participant","examiner","date"
-"A004",1,"ask for information from store employees","talk",1,"Mostly",NA,54.5479009522157,6.675186799559,0.228,41.059,49.906,66.4,0,2,2,"one","two",2022-07-12 14:32:06
-"A120",41,"follow simple spoken requests (e.g. pass the salt)","comp",2,"Mostly",NA,51.973383725998,5.84696986839717,0.175,30.955,55.572,NA,1,2,1,"one","two",2022-07-12 14:32:06
-"A055",15,"talk about current/previous work","gen",3,"Mostly",NA,53.7892415101647,4.90558659743604,0.218,40.009,49.518,67.339,0,2,2,"one","two",2022-07-12 14:32:06
-"A012",3,"fill out simple forms","writ",4,"Mostly",NA,54.8568956087305,4.08288334869806,0.282,42.77,50.009,64.696,0,2,2,"one","two",2022-07-12 14:32:06
-"A141",47,"say the names of common objects (e.g., bed, lamp, pencil)","nam",5,"Mostly",NA,54.252474222635,3.68375179684296,0.271,30.057,42.207,60.694,0,2,2,"one","two",2022-07-12 14:32:06
-"A123",42,"start a new topic in conversation","talk",6,"Mostly",NA,55.6193567947901,3.42804228918218,0.229,39.805,54.418,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A022",8,"read signs in a store to find what you need","comp",7,"Mostly",NA,55.2133354159454,3.29037669414097,0.183,28.069,37.951,62.124,0,2,2,"one","two",2022-07-12 14:32:06
-"A080",25,"tell a story","talk",8,"Mostly",NA,56.5648920545657,3.09721073260625,0.23,43.439,57.401,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A038",14,"understand your bank/credit card statements","comp",9,"Mostly",NA,56.4134297964944,2.99644248184114,0.158,44.015,64.32,NA,1,2,1,"one","two",2022-07-12 14:32:06
-"A069",21,"introduce yourself","gen",10,"Mostly",NA,56.0936624458637,2.87454085213311,0.197,33.81,42.761,61.838,0,2,2,"one","two",2022-07-12 14:32:06
-"A161",52,"have a conversation with strangers","talk",11,"Mostly",NA,56.7689738283026,2.74929518639574,0.226,40.842,54.032,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A029",11,"write your phone number","writ",12,"Mostly",NA,56.1836620995146,2.60448781672709,0.252,41.778,59.092,NA,2,2,1,"one","two",2022-07-12 14:32:06
-"A079",24,"tell a joke","talk",13,"Mostly",NA,56.9359723793378,2.52534399212515,0.197,47.512,58.307,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A023",9,"read street name signs","comp",14,"Mostly",NA,56.7109917742327,2.47603557346741,0.168,27.611,37.754,63.398,0,2,2,"one","two",2022-07-12 14:32:06
-"A098",32,"say the names of body parts","nam",15,"Mostly",NA,56.4564421653842,2.3773237973624,0.259,35.163,44.67,61.877,0,2,2,"one","two",2022-07-12 14:32:06
-"A124",43,"keep a conversation going","talk",16,"Mostly",NA,56.8247112929201,2.30169183378492,0.208,39.851,53.786,72.399,0,2,2,"one","two",2022-07-12 14:32:06
-"A019",6,"read product labels","comp",17,"Mostly",NA,56.7995861825684,2.26365438461726,0.187,29.32,44.071,67.998,0,2,2,"one","two",2022-07-12 14:32:06
-"A170",57,"talk to your closest family member or friend","gen",18,"Mostly",NA,56.6299894252139,2.2211993363173,0.215,39.174,64.013,NA,1,2,1,"one","two",2022-07-12 14:32:06
-"A028",10,"write your address","writ",19,"Mostly",NA,56.2594606746261,2.15617906581184,0.244,38.619,59.467,NA,2,2,1,"one","two",2022-07-12 14:32:06
-"A166",55,"start a conversation with other people","talk",20,"Mostly",NA,56.5482395957139,2.09782926642033,0.208,39.18,53.263,71.72,0,2,2,"one","two",2022-07-12 14:32:06
-"A089",27,"understand magazine/newpaper articles","comp",21,"Mostly",NA,56.636084487085,2.06775000651427,0.161,34.136,48.321,71.295,0,2,2,"one","two",2022-07-12 14:32:06
-"A116",39,"find the words you want to say during conversation","talk",22,"Mostly",NA,57.0443647573086,2.02352502565371,0.196,39.971,56.776,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A099",33,"say the names of clothing items","nam",23,"Mostly",NA,56.8382600860827,1.97283945028869,0.23,31.304,44.384,61.168,0,2,2,"one","two",2022-07-12 14:32:06
-"A173",58,"understand your closest family member or friend when they talk to you","comp",24,"Mostly",NA,56.6647606327576,1.9530123772099,0.154,33.837,61.659,NA,1,2,1,"one","two",2022-07-12 14:32:06
-"A160",51,"make yourself understood when you speak with strangers","talk",25,"Mostly",NA,56.9019327473031,1.91948099872083,0.201,38.679,52.757,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A065",19,"talk about your future plans with family or friends","gen",26,"Mostly",NA,56.8927915795602,1.89391103645264,0.2,30.947,45.465,67.607,0,2,2,"one","two",2022-07-12 14:32:06
-"A101",35,"say your address","writ",27,"Mostly",NA,56.6194639917172,1.85384489579595,0.226,41.068,59.089,NA,2,2,1,"one","two",2022-07-12 14:32:06
-"A162",53,"explain how to do something","talk",28,"Mostly",NA,56.8722173854017,1.82507977095346,0.189,38.625,54.411,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A104",37,"understand medicine labels","comp",29,"Mostly",NA,56.8190896609084,1.80693520585709,0.148,43.381,65.043,NA,1,2,1,"one","two",2022-07-12 14:32:06
-"A147",48,"talk with a group of people","talk",30,"Mostly",NA,57.0241606071451,1.78386591984367,0.179,38.849,53.496,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A090",28,"understand newspaper headlines","comp",31,"Mostly",NA,56.9297681883432,1.76852745821951,0.152,26.031,38.965,63.967,0,2,2,"one","two",2022-07-12 14:32:06
-"A100",34,"talk about your health concerns with family members","gen",32,"Mostly",NA,56.9147453315338,1.74961299804517,0.176,45.185,67.217,NA,1,2,1,"one","two",2022-07-12 14:32:06
-"A011",2,"explain how to get somewhere","talk",33,"Mostly",NA,57.1171389432663,1.72844882520931,0.175,40.436,54.197,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A031",12,"write a simple ""to do"" list","writ",34,"Mostly",NA,57.2008362162703,1.69615503578678,0.209,43.433,51.662,67.353,0,2,2,"one","two",2022-07-12 14:32:06
-"A016",4,"say the names of food items","nam",35,"Mostly",NA,57.1249072393657,1.6659649185319,0.255,35.342,46.209,63.658,0,2,2,"one","two",2022-07-12 14:32:06
-"A117",40,"follow conversation about familiar topics","comp",36,"Mostly",NA,57.0644832501879,1.65424771349519,0.169,38.912,66.367,NA,1,2,1,"one","two",2022-07-12 14:32:06
-"A125",44,"leave a message on an answering machine","talk",37,"Mostly",NA,57.0692922217244,1.63791453295686,0.218,45.947,68.634,NA,2,2,1,"one","two",2022-07-12 14:32:06
-"A103",36,"tell people about yourself","talk",38,"Mostly",NA,57.1729713314441,1.62229333021592,0.201,35.644,49.847,NA,3,2,2,"one","two",2022-07-12 14:32:06
-"A018",5,"read food labels","comp",NA,NA,NA,NA,NA,0.132,25.097,40.181,67.439,0,NA,NA,"one","two",2022-07-12 14:32:06
-"A021",7,"read traffic signs","comp",NA,NA,NA,NA,NA,0.13,32.027,58.191,NA,1,NA,NA,"one","two",2022-07-12 14:32:06
-"A032",13,"fill out complex forms","writ",NA,NA,NA,NA,NA,0.174,52.251,66.28,NA,3,NA,NA,"one","two",2022-07-12 14:32:06
-"A060",16,"call family members by name","nam",NA,NA,NA,NA,NA,0.183,30.608,42.076,58.585,0,NA,NA,"one","two",2022-07-12 14:32:06
-"A063",17,"correct mistakes you make when you talk","talk",NA,NA,NA,NA,NA,0.155,32.673,48.948,NA,3,NA,NA,"one","two",2022-07-12 14:32:06
-"A064",18,"talk about your day with family or friends","talk",NA,NA,NA,NA,NA,0.194,33.022,44.33,68.114,0,NA,NA,"one","two",2022-07-12 14:32:06
-"A066",20,"follow a story someone tells","comp",NA,NA,NA,NA,NA,0.121,24.382,43.971,79.247,0,NA,NA,"one","two",2022-07-12 14:32:06
-"A072",22,"share opinions","talk",NA,NA,NA,NA,NA,0.175,32.162,48.917,NA,3,NA,NA,"one","two",2022-07-12 14:32:06
-"A074",23,"discuss family matters with your spouse and children","gen",NA,NA,NA,NA,NA,0.193,42.92,67.172,NA,1,NA,NA,"one","two",2022-07-12 14:32:06
-"A082",26,"write a personal letter","writ",NA,NA,NA,NA,NA,0.167,55.988,NA,NA,4,NA,NA,"one","two",2022-07-12 14:32:06
-"A092",29,"talk about movies that you have seen","talk",NA,NA,NA,NA,NA,0.164,37.885,51.624,NA,3,NA,NA,"one","two",2022-07-12 14:32:06
-"A095",30,"explain your health concerns to your doctor","talk",NA,NA,NA,NA,NA,0.179,34.994,45.008,68.176,0,NA,NA,"one","two",2022-07-12 14:32:06
-"A096",31,"follow therapy instructions","comp",NA,NA,NA,NA,NA,0.117,36.483,68.063,NA,1,NA,NA,"one","two",2022-07-12 14:32:06
-"A114",38,"make yourself understood when you speak with family or friends","talk",NA,NA,NA,NA,NA,0.168,28.527,45.587,72.83,0,NA,NA,"one","two",2022-07-12 14:32:06
-"A135",45,"correct yourself when people do not understand you","talk",NA,NA,NA,NA,NA,0.176,31.845,48.162,NA,3,NA,NA,"one","two",2022-07-12 14:32:06
-"A138",46,"say your name","nam",NA,NA,NA,NA,NA,0.206,35.181,50.004,NA,1,NA,NA,"one","two",2022-07-12 14:32:06
-"A152",49,"understand humor in pictures (e.g., comics, photographs)","comp",NA,NA,NA,NA,NA,0.123,34.28,65.629,NA,1,NA,NA,"one","two",2022-07-12 14:32:06
-"A158",50,"tell people why you can't talk very well","gen",NA,NA,NA,NA,NA,0.138,31.599,45.242,70.409,0,NA,NA,"one","two",2022-07-12 14:32:06
-"A164",54,"answer yes/no questions","comp",NA,NA,NA,NA,NA,0.13,31.431,60.766,NA,1,NA,NA,"one","two",2022-07-12 14:32:06
-"A167",56,"make your wants and needs known","gen",NA,NA,NA,NA,NA,0.138,39.029,68.037,NA,1,NA,NA,"one","two",2022-07-12 14:32:06
-"A177",59,"write messages in greeting cards","writ",NA,NA,NA,NA,NA,0.164,42.496,74.121,NA,2,NA,NA,"one","two",2022-07-12 14:32:06
+"A004",1,"ask for information from store employees","talk",1,"Mostly",NA,54.5479009522157,6.675186799559,0.228,41.059,49.906,66.4,0,2,2,"one","two",2022-07-12 15:28:36
+"A120",41,"follow simple spoken requests (e.g. pass the salt)","comp",2,"Mostly",NA,51.973383725998,5.84696986839717,0.175,30.955,55.572,NA,1,2,1,"one","two",2022-07-12 15:28:36
+"A055",15,"talk about current/previous work","gen",3,"Mostly",NA,53.7892415101647,4.90558659743604,0.218,40.009,49.518,67.339,0,2,2,"one","two",2022-07-12 15:28:36
+"A012",3,"fill out simple forms","writ",4,"Mostly",NA,54.8568956087305,4.08288334869806,0.282,42.77,50.009,64.696,0,2,2,"one","two",2022-07-12 15:28:36
+"A141",47,"say the names of common objects (e.g., bed, lamp, pencil)","nam",5,"Mostly",NA,54.252474222635,3.68375179684296,0.271,30.057,42.207,60.694,0,2,2,"one","two",2022-07-12 15:28:36
+"A123",42,"start a new topic in conversation","talk",6,"Mostly",NA,55.6193567947901,3.42804228918218,0.229,39.805,54.418,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A022",8,"read signs in a store to find what you need","comp",7,"Mostly",NA,55.2133354159454,3.29037669414097,0.183,28.069,37.951,62.124,0,2,2,"one","two",2022-07-12 15:28:36
+"A080",25,"tell a story","talk",8,"Mostly",NA,56.5648920545657,3.09721073260625,0.23,43.439,57.401,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A038",14,"understand your bank/credit card statements","comp",9,"Mostly",NA,56.4134297964944,2.99644248184114,0.158,44.015,64.32,NA,1,2,1,"one","two",2022-07-12 15:28:36
+"A069",21,"introduce yourself","gen",10,"Mostly",NA,56.0936624458637,2.87454085213311,0.197,33.81,42.761,61.838,0,2,2,"one","two",2022-07-12 15:28:36
+"A161",52,"have a conversation with strangers","talk",11,"Mostly",NA,56.7689738283026,2.74929518639574,0.226,40.842,54.032,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A029",11,"write your phone number","writ",12,"Mostly",NA,56.1836620995146,2.60448781672709,0.252,41.778,59.092,NA,2,2,1,"one","two",2022-07-12 15:28:36
+"A079",24,"tell a joke","talk",13,"Mostly",NA,56.9359723793378,2.52534399212515,0.197,47.512,58.307,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A023",9,"read street name signs","comp",14,"Mostly",NA,56.7109917742327,2.47603557346741,0.168,27.611,37.754,63.398,0,2,2,"one","two",2022-07-12 15:28:36
+"A098",32,"say the names of body parts","nam",15,"Mostly",NA,56.4564421653842,2.3773237973624,0.259,35.163,44.67,61.877,0,2,2,"one","two",2022-07-12 15:28:36
+"A124",43,"keep a conversation going","talk",16,"Mostly",NA,56.8247112929201,2.30169183378492,0.208,39.851,53.786,72.399,0,2,2,"one","two",2022-07-12 15:28:36
+"A019",6,"read product labels","comp",17,"Mostly",NA,56.7995861825684,2.26365438461726,0.187,29.32,44.071,67.998,0,2,2,"one","two",2022-07-12 15:28:36
+"A170",57,"talk to your closest family member or friend","gen",18,"Mostly",NA,56.6299894252139,2.2211993363173,0.215,39.174,64.013,NA,1,2,1,"one","two",2022-07-12 15:28:36
+"A028",10,"write your address","writ",19,"Mostly",NA,56.2594606746261,2.15617906581184,0.244,38.619,59.467,NA,2,2,1,"one","two",2022-07-12 15:28:36
+"A166",55,"start a conversation with other people","talk",20,"Mostly",NA,56.5482395957139,2.09782926642033,0.208,39.18,53.263,71.72,0,2,2,"one","two",2022-07-12 15:28:36
+"A089",27,"understand magazine/newpaper articles","comp",21,"Mostly",NA,56.636084487085,2.06775000651427,0.161,34.136,48.321,71.295,0,2,2,"one","two",2022-07-12 15:28:36
+"A116",39,"find the words you want to say during conversation","talk",22,"Mostly",NA,57.0443647573086,2.02352502565371,0.196,39.971,56.776,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A099",33,"say the names of clothing items","nam",23,"Mostly",NA,56.8382600860827,1.97283945028869,0.23,31.304,44.384,61.168,0,2,2,"one","two",2022-07-12 15:28:36
+"A173",58,"understand your closest family member or friend when they talk to you","comp",24,"Mostly",NA,56.6647606327576,1.9530123772099,0.154,33.837,61.659,NA,1,2,1,"one","two",2022-07-12 15:28:36
+"A160",51,"make yourself understood when you speak with strangers","talk",25,"Mostly",NA,56.9019327473031,1.91948099872083,0.201,38.679,52.757,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A065",19,"talk about your future plans with family or friends","gen",26,"Mostly",NA,56.8927915795602,1.89391103645264,0.2,30.947,45.465,67.607,0,2,2,"one","two",2022-07-12 15:28:36
+"A101",35,"say your address","writ",27,"Mostly",NA,56.6194639917172,1.85384489579595,0.226,41.068,59.089,NA,2,2,1,"one","two",2022-07-12 15:28:36
+"A162",53,"explain how to do something","talk",28,"Mostly",NA,56.8722173854017,1.82507977095346,0.189,38.625,54.411,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A104",37,"understand medicine labels","comp",29,"Mostly",NA,56.8190896609084,1.80693520585709,0.148,43.381,65.043,NA,1,2,1,"one","two",2022-07-12 15:28:36
+"A147",48,"talk with a group of people","talk",30,"Mostly",NA,57.0241606071451,1.78386591984367,0.179,38.849,53.496,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A090",28,"understand newspaper headlines","comp",31,"Mostly",NA,56.9297681883432,1.76852745821951,0.152,26.031,38.965,63.967,0,2,2,"one","two",2022-07-12 15:28:36
+"A100",34,"talk about your health concerns with family members","gen",32,"Mostly",NA,56.9147453315338,1.74961299804517,0.176,45.185,67.217,NA,1,2,1,"one","two",2022-07-12 15:28:36
+"A011",2,"explain how to get somewhere","talk",33,"Mostly",NA,57.1171389432663,1.72844882520931,0.175,40.436,54.197,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A031",12,"write a simple ""to do"" list","writ",34,"Mostly",NA,57.2008362162703,1.69615503578678,0.209,43.433,51.662,67.353,0,2,2,"one","two",2022-07-12 15:28:36
+"A016",4,"say the names of food items","nam",35,"Mostly",NA,57.1249072393657,1.6659649185319,0.255,35.342,46.209,63.658,0,2,2,"one","two",2022-07-12 15:28:36
+"A117",40,"follow conversation about familiar topics","comp",36,"Mostly",NA,57.0644832501879,1.65424771349519,0.169,38.912,66.367,NA,1,2,1,"one","two",2022-07-12 15:28:36
+"A125",44,"leave a message on an answering machine","talk",37,"Mostly",NA,57.0692922217244,1.63791453295686,0.218,45.947,68.634,NA,2,2,1,"one","two",2022-07-12 15:28:36
+"A103",36,"tell people about yourself","talk",38,"Mostly",NA,57.1729713314441,1.62229333021592,0.201,35.644,49.847,NA,3,2,2,"one","two",2022-07-12 15:28:36
+"A018",5,"read food labels","comp",NA,NA,NA,NA,NA,0.132,25.097,40.181,67.439,0,NA,NA,"one","two",2022-07-12 15:28:36
+"A021",7,"read traffic signs","comp",NA,NA,NA,NA,NA,0.13,32.027,58.191,NA,1,NA,NA,"one","two",2022-07-12 15:28:36
+"A032",13,"fill out complex forms","writ",NA,NA,NA,NA,NA,0.174,52.251,66.28,NA,3,NA,NA,"one","two",2022-07-12 15:28:36
+"A060",16,"call family members by name","nam",NA,NA,NA,NA,NA,0.183,30.608,42.076,58.585,0,NA,NA,"one","two",2022-07-12 15:28:36
+"A063",17,"correct mistakes you make when you talk","talk",NA,NA,NA,NA,NA,0.155,32.673,48.948,NA,3,NA,NA,"one","two",2022-07-12 15:28:36
+"A064",18,"talk about your day with family or friends","talk",NA,NA,NA,NA,NA,0.194,33.022,44.33,68.114,0,NA,NA,"one","two",2022-07-12 15:28:36
+"A066",20,"follow a story someone tells","comp",NA,NA,NA,NA,NA,0.121,24.382,43.971,79.247,0,NA,NA,"one","two",2022-07-12 15:28:36
+"A072",22,"share opinions","talk",NA,NA,NA,NA,NA,0.175,32.162,48.917,NA,3,NA,NA,"one","two",2022-07-12 15:28:36
+"A074",23,"discuss family matters with your spouse and children","gen",NA,NA,NA,NA,NA,0.193,42.92,67.172,NA,1,NA,NA,"one","two",2022-07-12 15:28:36
+"A082",26,"write a personal letter","writ",NA,NA,NA,NA,NA,0.167,55.988,NA,NA,4,NA,NA,"one","two",2022-07-12 15:28:36
+"A092",29,"talk about movies that you have seen","talk",NA,NA,NA,NA,NA,0.164,37.885,51.624,NA,3,NA,NA,"one","two",2022-07-12 15:28:36
+"A095",30,"explain your health concerns to your doctor","talk",NA,NA,NA,NA,NA,0.179,34.994,45.008,68.176,0,NA,NA,"one","two",2022-07-12 15:28:36
+"A096",31,"follow therapy instructions","comp",NA,NA,NA,NA,NA,0.117,36.483,68.063,NA,1,NA,NA,"one","two",2022-07-12 15:28:36
+"A114",38,"make yourself understood when you speak with family or friends","talk",NA,NA,NA,NA,NA,0.168,28.527,45.587,72.83,0,NA,NA,"one","two",2022-07-12 15:28:36
+"A135",45,"correct yourself when people do not understand you","talk",NA,NA,NA,NA,NA,0.176,31.845,48.162,NA,3,NA,NA,"one","two",2022-07-12 15:28:36
+"A138",46,"say your name","nam",NA,NA,NA,NA,NA,0.206,35.181,50.004,NA,1,NA,NA,"one","two",2022-07-12 15:28:36
+"A152",49,"understand humor in pictures (e.g., comics, photographs)","comp",NA,NA,NA,NA,NA,0.123,34.28,65.629,NA,1,NA,NA,"one","two",2022-07-12 15:28:36
+"A158",50,"tell people why you can't talk very well","gen",NA,NA,NA,NA,NA,0.138,31.599,45.242,70.409,0,NA,NA,"one","two",2022-07-12 15:28:36
+"A164",54,"answer yes/no questions","comp",NA,NA,NA,NA,NA,0.13,31.431,60.766,NA,1,NA,NA,"one","two",2022-07-12 15:28:36
+"A167",56,"make your wants and needs known","gen",NA,NA,NA,NA,NA,0.138,39.029,68.037,NA,1,NA,NA,"one","two",2022-07-12 15:28:36
+"A177",59,"write messages in greeting cards","writ",NA,NA,NA,NA,NA,0.164,42.496,74.121,NA,2,NA,NA,"one","two",2022-07-12 15:28:36

@@ -11,7 +11,7 @@
 #' @export
 combine_acom_files <- function(folder_path, summary = FALSE){
   
- files = list.files(path, full.names = TRUE, pattern = "*acom.csv")
+ files = list.files(folder_path, full.names = TRUE, pattern = "*acom.csv")
   
  file_list = list()
  

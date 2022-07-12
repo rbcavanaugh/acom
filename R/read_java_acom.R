@@ -14,6 +14,8 @@ read_java_acom <- function(path){
       c(
       "Examinee",
       "Administrator",
+      "Final T-Score Estimate",
+      "Final Standard Error",
       "Session", 
       "Date",
       "95% C.I.",
@@ -27,9 +29,9 @@ read_java_acom <- function(path){
       tidyr::separate(value, into = c("description", "value"), sep = ":|=", extra = "merge") %>%
       dplyr::mutate(description = stringr::str_trim(description),
              value = stringr::str_trim(value)) %>%
-      dplyr::slice(1:8)
+      dplyr::slice(1:10)
     
-    df = readr::read_fwf(path, skip = 79) %>%
+    df = readr::read_fwf(path, skip = 79, show_col_types = FALSE) %>%
       tidyr::drop_na(1) %>%
       dplyr::select(-X4)
     

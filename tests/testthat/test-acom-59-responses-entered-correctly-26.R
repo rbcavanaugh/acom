@@ -3,12 +3,21 @@ test_that("acom-59-responses-saved-correctly", {
   #########################################################
   # Get app to results page
   #########################################################
-  df = read.csv(here::here("tests", "testthat", "files", "test1.csv"))%>%
-    dplyr::mutate(response = ifelse(response == "Notvery", "Not very", response)) %>%
+
+  joins = read.csv(here::here("tests", "testthat", "files", "join.csv"))
+  
+  df = read_java_acom(here::here("tests", "testthat", "files", "test1.txt"))
+  
+  df1 = df$data %>%
+    dplyr::left_join(joins, by = "item") %>%
     dplyr::arrange(itnum)
+  
+  theta1 = as.numeric(df$test_info[which(df$test_info$description=="Final T-Score Estimate"),]$value)
+  sem1   = as.numeric(df$test_info[which(df$test_info$description=="Final Standard Error"),]$value)
+  
   app <- AppDriver$new(app_dir = here::here(), height = 800, width = 1200, seed = 1) 
 
-  #app$set_inputs(test = 59)
+  #### PARTICIPANT 1 TEST ####
   app$set_inputs(participant = "one")
   app$set_inputs(examiner = "two")
   app$click("next1")
@@ -17,7 +26,7 @@ test_that("acom-59-responses-saved-correctly", {
   app$click("start")
   for(i in 1:59){
     tmp = app$get_value(export = "itnum")
-    app$set_inputs(select = df$response[which(df$itnum==tmp)])
+    app$set_inputs(select = df1$response[which(df1$itnum==tmp)])
     app$click("enter")
   }
 
@@ -31,8 +40,8 @@ test_that("acom-59-responses-saved-correctly", {
   testthat::expect_equal(val$export$current_page, "results")
   # are responses tracked accurately?
   
-  testthat::expect_equal(round(val$export$values$theta, 2), 60.37)
-  testthat::expect_equal(round(val$export$values$sem, 1), 1.5)
+  testthat::expect_equal(val$export$values$theta, theta1, tolerance = 0.05)
+  testthat::expect_equal(val$export$values$sem, sem1, tolerance = 0.05)
 
   testthat::expect_equal(val$export$values$test_length, 59)
   testthat::expect_equal(val$export$values$items_completed, 59)
@@ -48,8 +57,8 @@ test_that("acom-59-responses-saved-correctly", {
   # so that responses can be rescored in an R script. 
   items = val$export$results %>% dplyr::arrange(itnum) %>% dplyr::pull(itnum)
   responses = val$export$results %>% dplyr::arrange(itnum) %>% dplyr::pull(response)
-  testthat::expect_equal(responses, df$response)
-  testthat::expect_equal(items, df$itnum)
-  
+  testthat::expect_equal(responses, df1$response)
+  testthat::expect_equal(items, df1$itnum)
+
   
 })
