@@ -109,6 +109,7 @@ app_server <- function( input, output, session ) {
     v$results$participant = input$participant
     # save the test length
     v$test_length = input$test
+    v$datetime = Sys.time()
   })
   
   
@@ -305,11 +306,12 @@ app_server <- function( input, output, session ) {
                        # data for download. selects columns and reorders them to be 
                        # helpful for the user. extra columns saved per WH's request.
                        values = v$results %>%
+                         dplyr::mutate(date = v$datetime) %>%
                          dplyr::select(item, itnum, item_content,
                                        content_area, order, response, DNA_comm_dis,
                                        theta, sem, discrim, b1, b2, b3, merge_cats,
                                        response_num, response_merge, participant,
-                                       examiner) %>%
+                                       examiner, date) %>%
                          dplyr::arrange(order)) 
   # Download the report .pdf file. requires rmarkdown, pandoc, LaTex
   downloadReportServer(id = "download_report", v = v)

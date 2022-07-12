@@ -42,6 +42,32 @@ A helpful resource for this step is here: https://happygitwithr.com/
 
 Prior versions of the ACOM application were available through a java-based web application (the latest being 3.0.2). However, updates to java mean that this application does not consistently save a results file. Using older, unstable versions of java may contain potential security concerns. Thus using the prior version of the ACOM java application is not recommended. 
 
+The acom package does include af function to extract values from prior versions of the ACOM administered using the java app. It returns a list with two items. The first is a summary dataframe with information about the test and the second is a dataframe with the item-level responses. 
+
+```{r}
+acom::read_java_acom("path_to_txt_file")
+```
+
+### Combining and summarizing multiple ACOM files
+
+To combine item-level responses for multiple ACOM administrations, the R package includes
+a function called `combine_acom_files()` which requires a path to a folder with at least one .csv file
+that can be downloaded at the end of each ACOM test. The resulting file will contain all responses for
+all participants in the folder in long format.
+
+```{r}
+acom::combine_acom_files("path_to_folder_with_csv_files")
+```
+
+To create a summary dataframe of the final ability estimates, standard error, and 95% confidence interval, include the argument `summary = TRUE`.
+
+```{r}
+acom::combine_acom_files("path_to_folder_with_csv_files", summary = TRUE)
+```
+
+Note that modifying the .csv files (especially the headers) or including other .csv files in the
+folder may cause this function to return an error.
+
 ### About the ACOM
 
 The current version of the ACOM is a fully adaptive 59-item test. This test administers *up to* 59 items adaptively, targeting items to provide the most statistical information at the current ability estimate. After every item is administered, an updated ability estimate is obtained and is used to select the next item until all items have been administered. Items are administered based on the examinee's score estimate and based on the item's content category. A content-balancing strategy is used to select items from each domain (talking, writing and number use, comprehension, and naming) to insure that the content balance of each CAT-ACOM administration is reflective of the content balance of the full 59 item bank.
