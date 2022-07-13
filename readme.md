@@ -23,12 +23,17 @@ The app is now online at  https://rb-cavanaugh.shinyapps.io/acom/
 
 The app can be installed locally via `remotes::install_github()`
 
-#### 3. Remote access to the app, run locally
+#### 3. Local installation on RStudio Cloud
+
+The app can be installed and run from RStudio Cloud (https://rstudio.cloud/)
+if R/Rstudio can't be installed locally.
+
+#### 4. Remote access to the app, run locally
 
 The app can also be accessed via `shiny::runGitHub()`
 
 
-#### 4. Clone the repository
+#### 5. Clone the repository
 
 If desired, the repository can be cloned, and run locally. 
 
