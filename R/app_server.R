@@ -89,10 +89,14 @@ app_server <- function( input, output, session ) {
     # denom = test length
     txt = paste0(n, "/", v$test_length)
     # UI aspect returned by the function
-    column(align = "left", width = 12,
+      column(align = "left", width = 12,
            div(txt, class = "response"))
   })
-
+  
+  output$item_info <- renderUI({
+    tags$span(guidelines[which(guidelines$itnum==v$itnum),]$note)
+  })
+  
   ##############################################################################
   ##############################################################################
   ############################# START ASSESSMENT ###############################
@@ -110,6 +114,7 @@ app_server <- function( input, output, session ) {
     # save the test length
     v$test_length = input$test
     shinyjs::js$gettime()
+    shinyjs::show("help")
   })
   
   
@@ -228,6 +233,7 @@ app_server <- function( input, output, session ) {
       shinyjs::show("download_report-report_download")
       shinyjs::show("download_results-results_download")
       shinyjs::hide("end_test")
+      shinyjs::hide("help")
       shinyjs::show("start_over")
     } else {
       # otherwise, there are more items to give. 
@@ -281,6 +287,7 @@ app_server <- function( input, output, session ) {
     shinyjs::show("download_report-report_download")
     shinyjs::show("download_results-results_download")
     shinyjs::hide("end_test")
+    shinyjs::hide("help")
     shinyjs::show("start_over")
     removeModal() # remove modal
 
@@ -387,6 +394,7 @@ app_server <- function( input, output, session ) {
         )
       )
   })
+
   
   ################################################################################
   ################################## UPLOADS #####################################

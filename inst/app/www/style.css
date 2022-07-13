@@ -121,3 +121,36 @@ input[value="Doesn't apply to me"] + span{
 .nav-link{
   padding:0.1rem;
 }
+
+#info-drop{
+  background-color:transparent;
+  border:0px;
+}
+
+.ttip {
+  text-decoration: none;
+}
+
+.ttip:hover {
+  position: relative;
+}
+
+.ttip span {
+  display: none;
+  font-size:1rem;
+}
+
+.ttip:hover span, .ttip:active span {
+  border: #000000 20px;
+  padding: 20px;
+  display: block;
+  z-index: 10000;
+  background: #FFF;
+  right: 10px;
+  margin: 15px;
+  width: 400px;
+  position: absolute;
+  top: 15px;
+  text-decoration: none;
+  text-align: left;
+}

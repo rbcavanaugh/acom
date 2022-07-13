@@ -56,11 +56,11 @@ goCAT <- function(v){
                         criterion = "MFI",
                         method = "EAP",
                         priorDist = "norm", priorPar = c(50, 10),
-                        D = 1, range = c(10, 90), parInt = c(10, 90, 81),
+                        D = 1, range = c(10, 90), parInt = c(10, 90, 33),
                         infoType = "observed",
-                        randomesque = 1, random.seed = check_test_random(),
-                        rule = "length", thr = 20, SETH = NULL,
-                        AP = 1, nAvailable = NULL, maxItems = 59, 
+                        randomesque = 1,
+                        random.seed = check_test_random(),
+                        nAvailable = NULL, maxItems = 59, 
                         cbControl = acom_cbControl, cbGroup = acom_cb_group)
   
         next_item = it_next$item

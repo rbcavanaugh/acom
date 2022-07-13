@@ -36,6 +36,9 @@ pagetitle <- function(){
                           "Start Over",
                           style = "background-color:#f8f9fa; border:0px;")
            ),
+         shinyjs::hidden(actionButton("help", icon =  shiny::icon("info-circle"), label = uiOutput("item_info"),
+                      style = "font-size: 1rem;background-color:#f8f9fa; border:0px;",
+                      class = "ttip")),
          actionButton("info", icon =  shiny::icon("readme"), label = NULL,
                       style = "font-size: 1rem;background-color:#f8f9fa; border:0px;")
      )
