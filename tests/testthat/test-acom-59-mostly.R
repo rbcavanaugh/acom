@@ -27,7 +27,7 @@ test_that("acom-59-mostly", {
   # are we on the results page?
   testthat::expect_equal(val$export$current_page, "results")
   # are responses tracked accurately? 
-  testthat::expect_equal(length(app$expect_download("download_results-results_download")), 33)
+  #testthat::expect_equal(length(app$expect_download("download_results-results_download")), 33)
   
   
   testthat::expect_equal(round(val$export$values$theta, 0), 57)

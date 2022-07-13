@@ -18,7 +18,7 @@ downloadReportUI <- function(id) {
 #' @param v 
 #'
 #' @export
-downloadReportServer <- function(id, v) {
+downloadReportServer <- function(id, v, dt) {
   
   moduleServer(id, function(input, output, session){
       output$report_download <- downloadHandler(
@@ -36,8 +36,8 @@ downloadReportServer <- function(id, v) {
             
             # Set up parameters to pass to Rmd document
             params <- list(
-              v = v
-              #download_time = Sys.time()
+              v = v,
+              dt = dt
             )
             
             rmarkdown::render(tempReport, output_file = file,

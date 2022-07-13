@@ -1,0 +1,196 @@
+                  ACOM                   
+
+The Aphasia Communication Outcome Measure
+-----------------------------------------
+
+    Examinee:             Test05
+
+    Test Administrator:   
+
+    Session:              
+
+    Date:                 
+
+-----------------------------------------
+
+Summary: This individual's T-score estimate of 78.01 (95% confidence interval: 72.17, 83.86) indicates self-reported communicative functioning
+         approximately 2.80 standard deviations above the mean reported in a large reference sample of community-dwelling persons with aphasia
+         of at least one month post-onset.
+
+         T-scores are scaled such that the mean and standard deviation in the reference sample are 50 and 10, respectively. Given that the scores
+         in the reference sample were approximately normally distributed, roughly 68% of scores drawn from the population are expected to fall
+         between 40 and 60, and roughly 5% are expected to be lower than 30 or greater than 70.
+
+         The confidence interval expresses the uncertainty in the score estimate, with wider intervals at a given confidence level indicating 
+         greater uncertainty. If the test could be administered to this individual a large number of times under identical conditions,
+         95 out of 100 of the of 95% confidence intervals would contain the true value of the communicative functioning score.
+
+Test Type: Adaptive/Full Length ACOM - 59 item ACOM with the first 12 items adaptively administered and the last 47 items randomly administered.
+
+    Final T-Score Estimate =   78.01         
+
+    Final Standard Error =     2.98          
+
+    Final Estimate Type =      EAP           
+
+    95% C.I. =                 (72.17, 83.86)
+
+    90% C.I. =                 (73.12, 82.90)
+
+    68% C.I. =                 (75.63, 80.40)
+
+
+Notes: Complete
+
+    Item parameter set used = January2015_59ItemParamSet
+
+    Number of items administered = 59
+
+    Number of items marked NA = 12
+
+
+Test Type: Adaptive ACOM - 12 item short version of the ACOM with adaptive item administration.
+
+    Final T-Score Estimate =   72.24         
+
+    Final Standard Error =     3.25          
+
+    Final Estimate Type =      EAP           
+
+    95% C.I. =                 (65.87, 78.61)
+
+    90% C.I. =                 (66.91, 77.57)
+
+    68% C.I. =                 (69.64, 74.84)
+
+
+Notes: Complete
+
+    Item parameter set used = January2015_59ItemParamSet
+
+    Number of items administered = 17
+
+    Number of items marked NA = 5
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+          Item    Item Text                                                                 Response                    Equivalent Responses    T-Score Estimate    Standard Error    Time        
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    1     A004    ask for information from store employees?                                 Due to some other reason    Doesn't apply to me     0.00                0.00              01:54:23    
+
+    2     A018    read food labels?                                                         Mostly                      Mostly                  51.18               8.31              01:55:01    
+
+    3     A012    fill out simple forms?                                                    Due to some other reason    Doesn't apply to me     51.18               8.31              01:55:41    
+
+    4     A055    talk about current/previous work?                                         Completely                  Completely              61.77               6.81              01:57:13    
+
+    5     A141    say the names of common objects (e.g. bed lamp pencil)?                   Completely                  Completely              65.34               5.39              01:57:41    
+
+    6     A125    leave a message on an answering machine?                                  Due to some other reason    Doesn't apply to me     65.34               5.39              01:58:40    
+
+    7     A022    read signs in a store to find what you need?                              Due to some other reason    Doesn't apply to me     65.34               5.39              01:58:50    
+
+    8     A031    write a simple "to do" list?                                              Completely                  Completely              68.17               4.95              01:59:18    
+
+    9     A166    start a conversation with other people?                                   Completely                  Completely              70.93               4.70              02:00:15    
+
+    10    A065    talk about your future plans with family or friends?                      Mostly                      Mostly                  68.65               4.12              02:02:06    
+
+    11    A019    read product labels?                                                      Mostly                      Mostly                  67.23               3.78              02:03:31    
+
+    12    A124    keep a conversation going?                                                Completely                  Completely              69.16               3.62              02:04:21    
+
+    13    A016    say the names of food items?                                              Completely                  Completely              69.82               3.44              02:05:05    
+
+    14    A064    talk about your day with family or friends?                               Completely                  Completely              70.71               3.35              02:06:57    
+
+    15    A089    understand magazine/newpaper articles?                                    Completely                  Completely              71.59               3.31              02:07:17    
+
+    16    A032    fill out complex forms?                                                   Due to some other reason    Doesn't apply to me     71.59               3.31              02:07:54    
+
+    17    A095    explain your health concerns to your doctor?                              Completely                  Completely              72.24               3.25              02:08:31    
+
+    18    A160    make yourself understood when you speak with strangers?                   Due to some other reason    Doesn't apply to me     72.24               3.25              02:09:07    
+
+    19    A138    say your name?                                                            Completely                  Completely              72.26               3.24              02:09:30    
+
+    20    A170    talk to your closest family member or friend?                             Completely                  Completely              72.60               3.19              02:10:34    
+
+    21    A173    understand your closest family member or friend when they talk to you?    Completely                  Completely              72.84               3.16              02:12:32    
+
+    22    A104    understand medicine labels?                                               Completely                  Completely              73.19               3.14              02:14:04    
+
+    23    A029    write your phone number?                                                  Due to some other reason    Doesn't apply to me     73.19               3.14              02:14:22    
+
+    24    A066    follow a story someone tells?                                             Completely                  Completely              73.98               3.19              02:17:13    
+
+    25    A092    talk about movies that you have seen?                                     Completely                  Mostly                  74.02               3.18              02:18:41    
+
+    26    A011    explain how to get somewhere?                                             Completely                  Mostly                  74.08               3.18              02:19:08    
+
+    27    A103    tell people about yourself?                                               Completely                  Mostly                  74.10               3.17              02:19:57    
+
+    28    A023    read street name signs?                                                   Completely                  Completely              74.34               3.15              02:20:11    
+
+    29    A116    find the words you want to say during conversation?                       Mostly                      Completely              74.40               3.14              02:20:47    
+
+    30    A114    make yourself understood when you speak with family or friends?           Completely                  Completely              75.08               3.13              02:21:34    
+
+    31    A038    understand your bank/credit card statements?                              Due to some other reason    Doesn't apply to me     75.08               3.13              02:22:35    
+
+    32    A100    talk about your health concerns with family members?                      Completely                  Completely              75.42               3.11              02:24:04    
+
+    33    A120    follow simple spoken requests (e.g. pass the salt)?                       Completely                  Completely              75.47               3.10              02:24:53    
+
+    34    A021    read traffic signs?                                                       Completely                  Completely              75.59               3.09              02:25:25    
+
+    35    A074    discuss family matters with your spouse and children?                     Completely                  Completely              75.89               3.07              02:26:53    
+
+    36    A080    tell a story?                                                             Completely                  Mostly                  75.93               3.06              02:27:18    
+
+    37    A135    correct yourself when people do not understand you?                       Mostly                      Completely              75.94               3.06              02:28:11    
+
+    38    A164    answer yes/no questions?                                                  Completely                  Completely              76.09               3.05              02:28:26    
+
+    39    A069    introduce yourself?                                                       Completely                  Completely              76.20               3.04              02:28:39    
+
+    40    A162    explain how to do something?                                              Completely                  Mostly                  76.23               3.04              02:29:32    
+
+    41    A098    say the names of body parts?                                              Completely                  Completely              76.29               3.02              02:30:16    
+
+    42    A158    tell people why you can't talk very well?                                 Completely                  Completely              76.66               3.03              02:30:30    
+
+    43    A167    make your wants and needs known?                                          Completely                  Completely              76.95               3.02              02:30:51    
+
+    44    A096    follow therapy instructions?                                              Completely                  Completely              77.22               3.03              02:31:22    
+
+    45    A152    understand humor in pictures (e.g. comics photographs)?                   Completely                  Completely              77.44               3.03              02:31:45    
+
+    46    A072    share opinions?                                                           Completely                  Mostly                  77.45               3.03              02:32:20    
+
+    47    A161    have a conversation with strangers?                                       Due to some other reason    Doesn't apply to me     77.45               3.03              02:32:26    
+
+    48    A099    say the names of clothing items?                                          Completely                  Completely              77.50               3.02              02:32:28    
+
+    49    A063    correct mistakes you make when you talk?                                  Mostly                      Completely              77.52               3.02              02:33:07    
+
+    50    A177    write messages in greeting cards?                                         Due to some other reason    Doesn't apply to me     77.52               3.02              02:33:26    
+
+    51    A090    understand newspaper headlines?                                           Completely                  Completely              77.68               3.01              02:33:57    
+
+    52    A123    start a new topic in conversation?                                        Completely                  Mostly                  77.69               3.01              02:34:15    
+
+    53    A079    tell a joke?                                                              Due to some other reason    Doesn't apply to me     77.69               3.01              02:34:30    
+
+    54    A082    write a personal letter?                                                  Due to some other reason    Doesn't apply to me     77.69               3.01              02:34:42    
+
+    55    A147    talk with a group of people?                                              Completely                  Mostly                  77.71               3.01              02:35:23    
+
+    56    A101    say your address?                                                         Completely                  Completely              77.74               3.00              02:35:28    
+
+    57    A117    follow conversation about familiar topics?                                Completely                  Completely              77.94               2.99              02:35:31    
+
+    58    A028    write your address?                                                       Completely                  Completely              77.96               2.99              02:35:55    
+
+    59    A060    call family members by name?                                              Completely                  Completely              78.01               2.98              02:35:58    

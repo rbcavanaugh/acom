@@ -31,9 +31,10 @@ read_java_acom <- function(path){
              value = stringr::str_trim(value)) %>%
       dplyr::slice(1:10)
     
-    df = readr::read_fwf(path, skip = 79, show_col_types = FALSE) %>%
-      tidyr::drop_na(1) %>%
-      dplyr::select(-X4)
+    df = readr::read_lines(path, skip = 79) %>% 
+      tibble::as_tibble() %>% dplyr::filter(value != "") %>% 
+      dplyr::mutate(value = stringr::str_trim(value)) %>%
+      tidyr::separate(value, c("index", "item", "item_content", "response", "response_eq", "theta", "sem", "time"), sep = "[ ]{2,}" )
     
     colnames(df) = c("index", "item", "item_content", "response", "response_eq", "theta", "sem", "time")
     

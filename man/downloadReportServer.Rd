@@ -4,7 +4,7 @@
 \alias{downloadReportServer}
 \title{Download report module}
 \usage{
-downloadReportServer(id, v)
+downloadReportServer(id, v, dt)
 }
 \arguments{
 \item{id}{}

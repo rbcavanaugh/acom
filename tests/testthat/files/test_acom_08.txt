@@ -1,0 +1,128 @@
+                  ACOM                   
+
+The Aphasia Communication Outcome Measure
+-----------------------------------------
+
+    Examinee:             test08
+
+    Test Administrator:   
+
+    Session:              
+
+    Date:                 
+
+-----------------------------------------
+
+Summary: This individual's T-score estimate of 40.98 (95% confidence interval: 37.64, 44.33) indicates self-reported communicative functioning
+         approximately 0.90 standard deviations below the mean reported in a large reference sample of community-dwelling persons with aphasia
+         of at least one month post-onset.
+
+         T-scores are scaled such that the mean and standard deviation in the reference sample are 50 and 10, respectively. Given that the scores
+         in the reference sample were approximately normally distributed, roughly 68% of scores drawn from the population are expected to fall
+         between 40 and 60, and roughly 5% are expected to be lower than 30 or greater than 70.
+
+         The confidence interval expresses the uncertainty in the score estimate, with wider intervals at a given confidence level indicating 
+         greater uncertainty. If the test could be administered to this individual a large number of times under identical conditions,
+         95 out of 100 of the of 95% confidence intervals would contain the true value of the communicative functioning score.
+
+Test Type: ACOM38 - 38 item ACOM in alphabetical order.
+
+    Final T-Score Estimate =   40.98         
+
+    Final Standard Error =     1.71          
+
+    95% C.I. =                 (37.64, 44.33)
+
+    90% C.I. =                 (38.18, 43.78)
+
+    68% C.I. =                 (39.62, 42.35)
+
+
+Notes: Complete
+
+    Item parameter set used = January2015_59ItemParamSet
+
+    Number of items administered = 38
+
+    Number of items marked NA = 0
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+          Item    Item Text                                                                 Response      Equivalent Responses    T-Score Estimate    Standard Error    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    1     A004    ask for information from store employees?                                 Somewhat      Somewhat                45.48               7.01              
+
+    2     A060    call family members by name?                                              Somewhat      Somewhat                41.96               5.70              
+
+    3     A074    discuss family matters with your spouse and children?                     Somewhat      Not very                39.73               5.14              
+
+    4     A162    explain how to do something?                                              Not very      Not very                37.40               4.86              
+
+    5     A095    explain your health concerns to your doctor?                              Somewhat      Somewhat                38.00               4.20              
+
+    6     A012    fill out simple forms?                                                    Not very      Not very                37.14               3.90              
+
+    7     A116    find the words you want to say during conversation?                       Somewhat      Somewhat                38.66               3.47              
+
+    8     A117    follow conversation about familiar topics?                                Mostly        Mostly                  39.58               3.26              
+
+    9     A120    follow simple spoken requests (e.g. pass the salt)?                       Mostly        Mostly                  39.79               3.14              
+
+    10    A161    have a conversation with strangers?                                       Mostly        Completely              41.85               3.05              
+
+    11    A069    introduce yourself?                                                       Not very      Not very                40.39               2.99              
+
+    12    A124    keep a conversation going?                                                Somewhat      Somewhat                41.08               2.82              
+
+    13    A125    leave a message on an answering machine?                                  Somewhat      Mostly                  42.26               2.70              
+
+    14    A114    make yourself understood when you speak with family or friends?           Mostly        Mostly                  43.00               2.64              
+
+    15    A160    make yourself understood when you speak with strangers?                   Somewhat      Somewhat                43.22               2.53              
+
+    16    A019    read product labels?                                                      Somewhat      Somewhat                42.79               2.44              
+
+    17    A022    read signs in a store to find what you need?                              Completely    Completely              43.84               2.44              
+
+    18    A023    read street name signs?                                                   Completely    Completely              44.81               2.46              
+
+    19    A141    say the names of common objects (e.g. bed lamp pencil)?                   Somewhat      Somewhat                43.86               2.31              
+
+    20    A016    say the names of food items?                                              Not very      Not very                42.69               2.25              
+
+    21    A138    say your name?                                                            Mostly        Mostly                  42.68               2.18              
+
+    22    A166    start a conversation with other people?                                   Not very      Not very                42.05               2.13              
+
+    23    A064    talk about your day with family or friends?                               Not very      Not very                41.32               2.10              
+
+    24    A065    talk about your future plans with family or friends?                      Not very      Not very                40.54               2.08              
+
+    25    A100    talk about your health concerns with family members?                      Completely    Completely              41.30               2.08              
+
+    26    A170    talk to your closest family member or friend?                             Not very      Somewhat                40.76               2.03              
+
+    27    A147    talk with a group of people?                                              Not very      Not very                40.34               2.00              
+
+    28    A080    tell a story?                                                             Not very      Not very                40.05               1.96              
+
+    29    A103    tell people about yourself?                                               Somewhat      Somewhat                40.17               1.91              
+
+    30    A089    understand magazine/newpaper articles?                                    Somewhat      Somewhat                40.21               1.88              
+
+    31    A104    understand medicine labels?                                               Completely    Completely              40.72               1.87              
+
+    32    A090    understand newspaper headlines?                                           Mostly        Mostly                  40.93               1.85              
+
+    33    A038    understand your bank/credit card statements?                              Completely    Completely              41.46               1.85              
+
+    34    A173    understand your closest family member or friend when they talk to you?    Mostly        Mostly                  41.56               1.84              
+
+    35    A031    write a simple "to do" list?                                              Not very      Not very                41.28               1.80              
+
+    36    A177    write messages in greeting cards?                                         Not very      Not very                41.05               1.79              
+
+    37    A028    write your address?                                                       Not very      Not very                40.57               1.75              
+
+    38    A029    write your phone number?                                                  Somewhat      Mostly                  40.98               1.71              

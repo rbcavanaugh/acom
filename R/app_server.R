@@ -109,7 +109,7 @@ app_server <- function( input, output, session ) {
     v$results$participant = input$participant
     # save the test length
     v$test_length = input$test
-    v$datetime = Sys.time()
+    shinyjs::js$gettime()
   })
   
   
@@ -233,6 +233,7 @@ app_server <- function( input, output, session ) {
       # otherwise, there are more items to give. 
       # reset the radio button selections
       updateRadioButtons(session, "select", selected = character(0))
+      v$datetime = input$jstime 
       v$i = v$i + 1 # iterate on the item number
       v$itnum = cat_data$next_item # this is the next item
       v$clarify = NA # reset clarify to NA
@@ -275,6 +276,7 @@ app_server <- function( input, output, session ) {
     v$test_length = sum(!is.na(v$results$response)) 
     # go to the results page
     updateNavbarPage(session = session, "mainpage", selected = "results")
+    v$datetime = input$jstime
     # show download buttons, hide end test, allow start-over
     shinyjs::show("download_report-report_download")
     shinyjs::show("download_results-results_download")
@@ -314,7 +316,7 @@ app_server <- function( input, output, session ) {
                                        examiner, date) %>%
                          dplyr::arrange(order)) 
   # Download the report .pdf file. requires rmarkdown, pandoc, LaTex
-  downloadReportServer(id = "download_report", v = v)
+  downloadReportServer(id = "download_report", v = v, dt = v$datetime)
 
   ################################## SUMMARY TEXT ################################
   # ------------------------------------------------------------------------------

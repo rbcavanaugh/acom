@@ -3,7 +3,7 @@
 The Aphasia Communication Outcome Measure
 -----------------------------------------
 
-    Examinee:             BU27               
+    Examinee:             test2               
 
     Test Administrator:   wh                 
 

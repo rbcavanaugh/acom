@@ -1,0 +1,196 @@
+                  ACOM                   
+
+The Aphasia Communication Outcome Measure
+-----------------------------------------
+
+    Examinee:             Test02         
+
+    Test Administrator:   
+
+    Session:              
+
+    Date:                 
+
+-----------------------------------------
+
+Summary: This individual's T-score estimate of 51.30 (95% confidence interval: 48.28, 54.32) indicates self-reported communicative functioning
+         approximately 0.10 standard deviations above the mean reported in a large reference sample of community-dwelling persons with aphasia
+         of at least one month post-onset.
+
+         T-scores are scaled such that the mean and standard deviation in the reference sample are 50 and 10, respectively. Given that the scores
+         in the reference sample were approximately normally distributed, roughly 68% of scores drawn from the population are expected to fall
+         between 40 and 60, and roughly 5% are expected to be lower than 30 or greater than 70.
+
+         The confidence interval expresses the uncertainty in the score estimate, with wider intervals at a given confidence level indicating 
+         greater uncertainty. If the test could be administered to this individual a large number of times under identical conditions,
+         95 out of 100 of the of 95% confidence intervals would contain the true value of the communicative functioning score.
+
+Test Type: Adaptive/Full Length ACOM - 59 item ACOM with the first 12 items adaptively administered and the last 47 items randomly administered.
+
+    Final T-Score Estimate =   51.30         
+
+    Final Standard Error =     1.54          
+
+    Final Estimate Type =      EAP           
+
+    95% C.I. =                 (48.28, 54.32)
+
+    90% C.I. =                 (48.77, 53.83)
+
+    68% C.I. =                 (50.07, 52.53)
+
+
+Notes: Complete
+
+    Item parameter set used = January2015_59ItemParamSet
+
+    Number of items administered = 59
+
+    Number of items marked NA = 0
+
+
+Test Type: Adaptive ACOM - 12 item short version of the ACOM with adaptive item administration.
+
+    Final T-Score Estimate =   45.03         
+
+    Final Standard Error =     2.46          
+
+    Final Estimate Type =      EAP           
+
+    95% C.I. =                 (40.20, 49.85)
+
+    90% C.I. =                 (40.99, 49.07)
+
+    68% C.I. =                 (43.06, 47.00)
+
+
+Notes: Complete
+
+    Item parameter set used = January2015_59ItemParamSet
+
+    Number of items administered = 12
+
+    Number of items marked NA = 0
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+          Item    Item Text                                                                 Response      Equivalent Responses    T-Score Estimate    Standard Error    Time        
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    1     A004    ask for information from store employees?                                 Somewhat      Somewhat                47.18               6.14              10:38:01    
+
+    2     A019    read product labels?                                                      Somewhat      Somewhat                44.25               5.19              10:39:13    
+
+    3     A012    fill out simple forms?                                                    Not very      Not very                41.15               4.39              10:40:16    
+
+    4     A055    talk about current/previous work?                                         Somewhat      Somewhat                42.06               3.76              10:40:27    
+
+    5     A123    start a new topic in conversation?                                        Somewhat      Somewhat                42.92               3.39              10:40:41    
+
+    6     A098    say the names of body parts?                                              Somewhat      Somewhat                42.31               3.02              10:40:58    
+
+    7     A022    read signs in a store to find what you need?                              Mostly        Mostly                  42.77               2.91              10:41:09    
+
+    8     A080    tell a story?                                                             Not very      Not very                41.95               2.77              10:41:20    
+
+    9     A089    understand magazine/newpaper articles?                                    Mostly        Mostly                  42.80               2.71              10:41:38    
+
+    10    A161    have a conversation with strangers?                                       Somewhat      Somewhat                43.27               2.56              10:41:49    
+
+    11    A029    write your phone number?                                                  Completely    Completely              44.88               2.57              10:42:01    
+
+    12    A124    keep a conversation going?                                                Somewhat      Somewhat                45.03               2.46              10:42:14    
+
+    13    A138    say your name?                                                            Completely    Completely              45.89               2.42              10:42:22    
+
+    14    A164    answer yes/no questions?                                                  Completely    Completely              46.55               2.42              10:42:29    
+
+    15    A031    write a simple "to do" list?                                              Completely    Completely              47.77               2.45              10:42:42    
+
+    16    A116    find the words you want to say during conversation?                       Somewhat      Somewhat                47.80               2.38              10:42:58    
+
+    17    A069    introduce yourself?                                                       Completely    Completely              48.84               2.39              10:43:08    
+
+    18    A147    talk with a group of people?                                              Mostly        Completely              49.53               2.37              10:43:21    
+
+    19    A135    correct yourself when people do not understand you?                       Mostly        Completely              49.95               2.33              10:43:59    
+
+    20    A173    understand your closest family member or friend when they talk to you?    Mostly        Mostly                  49.89               2.30              10:44:12    
+
+    21    A104    understand medicine labels?                                               Not very      Somewhat                49.34               2.26              10:44:20    
+
+    22    A063    correct mistakes you make when you talk?                                  Somewhat      Somewhat                49.00               2.21              10:44:33    
+
+    23    A100    talk about your health concerns with family members?                      Mostly        Mostly                  49.25               2.17              10:44:44    
+
+    24    A141    say the names of common objects (e.g. bed lamp pencil)?                   Completely    Completely              50.46               2.18              10:45:01    
+
+    25    A023    read street name signs?                                                   Completely    Completely              51.17               2.18              10:45:10    
+
+    26    A074    discuss family matters with your spouse and children?                     Mostly        Mostly                  51.29               2.15              10:45:21    
+
+    27    A101    say your address?                                                         Completely    Completely              52.15               2.13              10:45:31    
+
+    28    A028    write your address?                                                       Completely    Completely              53.06               2.11              10:45:40    
+
+    29    A162    explain how to do something?                                              Somewhat      Somewhat                52.76               2.06              10:45:50    
+
+    30    A060    call family members by name?                                              Completely    Completely              53.31               2.03              10:46:05    
+
+    31    A082    write a personal letter?                                                  Not very      Not very                53.05               2.00              10:46:16    
+
+    32    A090    understand newspaper headlines?                                           Somewhat      Somewhat                52.52               1.99              10:46:27    
+
+    33    A114    make yourself understood when you speak with family or friends?           Completely    Completely              53.16               1.99              10:46:47    
+
+    34    A096    follow therapy instructions?                                              Mostly        Mostly                  53.15               1.98              10:46:58    
+
+    35    A125    leave a message on an answering machine?                                  Not very      Not very                52.47               1.95              10:47:10    
+
+    36    A079    tell a joke?                                                              Completely    Mostly                  53.02               1.92              10:47:26    
+
+    37    A120    follow simple spoken requests (e.g. pass the salt)?                       Completely    Completely              53.40               1.90              10:47:37    
+
+    38    A160    make yourself understood when you speak with strangers?                   Somewhat      Somewhat                53.07               1.86              10:48:00    
+
+    39    A167    make your wants and needs known?                                          Somewhat      Not very                52.66               1.85              10:48:12    
+
+    40    A018    read food labels?                                                         Completely    Completely              53.05               1.85              10:48:25    
+
+    41    A016    say the names of food items?                                              Mostly        Mostly                  53.12               1.81              10:48:40    
+
+    42    A066    follow a story someone tells?                                             Somewhat      Somewhat                52.84               1.80              10:48:57    
+
+    43    A099    say the names of clothing items?                                          Completely    Completely              53.47               1.78              10:49:14    
+
+    44    A177    write messages in greeting cards?                                         Not very      Not very                53.03               1.77              10:49:26    
+
+    45    A152    understand humor in pictures (e.g. comics photographs)?                   Mostly        Mostly                  53.00               1.76              10:49:38    
+
+    46    A032    fill out complex forms?                                                   Not very      Not very                52.72               1.74              10:49:51    
+
+    47    A158    tell people why you can't talk very well?                                 Mostly        Mostly                  52.80               1.73              10:50:03    
+
+    48    A038    understand your bank/credit card statements?                              Completely    Completely              53.20               1.72              10:50:25    
+
+    49    A021    read traffic signs?                                                       Completely    Completely              53.45               1.71              10:50:34    
+
+    50    A117    follow conversation about familiar topics?                                Mostly        Mostly                  53.43               1.70              10:50:48    
+
+    51    A103    tell people about yourself?                                               Somewhat      Somewhat                53.07               1.68              10:51:01    
+
+    52    A095    explain your health concerns to your doctor?                              Somewhat      Somewhat                52.70               1.66              10:51:12    
+
+    53    A072    share opinions?                                                           Somewhat      Somewhat                52.40               1.64              10:51:24    
+
+    54    A011    explain how to get somewhere?                                             Somewhat      Somewhat                52.26               1.62              10:51:42    
+
+    55    A064    talk about your day with family or friends?                               Mostly        Mostly                  52.32               1.60              10:52:05    
+
+    56    A170    talk to your closest family member or friend?                             Mostly        Mostly                  52.31               1.59              10:52:13    
+
+    57    A092    talk about movies that you have seen?                                     Somewhat      Somewhat                52.13               1.57              10:52:22    
+
+    58    A166    start a conversation with other people?                                   Not very      Not very                51.66               1.56              10:52:41    
+
+    59    A065    talk about your future plans with family or friends?                      Somewhat      Somewhat                51.30               1.54              10:52:55    
