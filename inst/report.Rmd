@@ -19,6 +19,7 @@ header-includes:
 \raggedright
 
 ```{r global_options, include=FALSE}
+library(magrittr)
 knitr::opts_chunk$set(fig.pos = 'H')
 #options(knitr.kable.NA = '-')
 shiny::setProgress(0.1)
