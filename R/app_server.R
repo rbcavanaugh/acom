@@ -115,6 +115,7 @@ app_server <- function( input, output, session ) {
     v$test_length = input$test
     shinyjs::js$gettime()
     shinyjs::show("help")
+    shinyjs::show("instructions")
   })
   
   
@@ -234,6 +235,7 @@ app_server <- function( input, output, session ) {
       shinyjs::show("download_results-results_download")
       shinyjs::hide("end_test")
       shinyjs::hide("help")
+      shinyjs::hide("instructions")
       shinyjs::show("start_over")
     } else {
       # otherwise, there are more items to give. 
@@ -288,6 +290,7 @@ app_server <- function( input, output, session ) {
     shinyjs::show("download_results-results_download")
     shinyjs::hide("end_test")
     shinyjs::hide("help")
+    shinyjs::hide("instructions")
     shinyjs::show("start_over")
     removeModal() # remove modal
 
@@ -393,6 +396,33 @@ app_server <- function( input, output, session ) {
           easyClose = TRUE
         )
       )
+  })
+  
+  # holds information for the technical documentation
+  observeEvent(input$instructions,{
+    showModal(
+      modalDialog(
+        size = "l",
+        title = "Instructions",
+        tabsetPanel(id = "instructions_tabs",
+          tabPanel(title = "Page 1",
+            div(includeMarkdown(system.file("app/www/instructions1.md", package = "acom")), style="font-size:1.1rem;margin:32px;"),
+          ),
+          tabPanel(title = "Page 2",
+            div(align = "center", style = "margin:32px;",
+            tags$h4("You will rate how effectively you perform tasks using the following categories:"),
+            tags$img(src="assets/acom_scale_radio_q.png", style="width:85%;")
+            )
+          ),
+          tabPanel(title = "Page 3",
+            div(includeMarkdown(system.file("app/www/instructions3.md", package = "acom")), style="font-size:1.2rem;margin:32px;"),
+          )
+        ),
+        
+        footer = modalButton("Dismiss"),
+        easyClose = TRUE
+      )
+    )
   })
 
   

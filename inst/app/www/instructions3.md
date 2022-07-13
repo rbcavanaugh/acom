@@ -6,6 +6,6 @@ Is this due to your communication difficulties or some other reason?
 
 <br>
 
-- **Of my communication difficulties**
+- **Due to my communication difficulties**
 
-- **Of some other reason not related to my communication difficulties**
+- **Due to some other reason not related to my communication difficulties**
