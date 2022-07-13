@@ -4,10 +4,12 @@
 \alias{read_java_acom}
 \title{read java acom}
 \usage{
-read_java_acom(path)
+read_java_acom(path, alpha = FALSE)
 }
 \arguments{
 \item{path}{path of acom .txt file from java app}
+
+\item{alpha}{if true, parse an alphabetical 38 item ACOM}
 }
 \value{
 a list of two data frames, one with test info and one with test data
