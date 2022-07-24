@@ -5,4 +5,6 @@ default:
 production:
   app_prod: yes
 dev:
-  golem_wd: /Users/robcavanaugh/github-repos/acom
+  golem_wd: !expr here::here()
+  
+  

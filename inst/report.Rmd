@@ -25,6 +25,7 @@ knitr::opts_chunk$set(fig.pos = 'H')
 shiny::setProgress(0.1)
 
 final = params$v$results %>%
+  dplyr::arrange(order) %>%
   tidyr::drop_na(response) %>%
   dplyr::filter(order == max(order, na.rm = TRUE)) %>%
   dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2))
@@ -63,19 +64,22 @@ table1 = tibble::tribble(
 
 
 short = params$v$results %>%
+  dplyr::arrange(order) %>%
   tidyr::drop_na(response) %>%
-  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1),
-         m = cumsum(obs)) %>%
+  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1)) %>%
+  dplyr::mutate(m = cumsum(obs)) %>%
   dplyr::filter(m == 12) %>%
   dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2))
 
 total_short = params$v$results %>%
+  dplyr::arrange(order) %>%
   tidyr::drop_na(response) %>%
   dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1),
          m = cumsum(obs)) %>%
   dplyr::filter(m <= 12) 
 
 valid_short = params$v$results %>%
+  dplyr::arrange(order) %>%
   tidyr::drop_na(response) %>%
   dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1),
          m = cumsum(obs)) %>%
@@ -104,6 +108,14 @@ table2 = tibble::tribble(
   "Items marked NA"        , as.character(sum(is.na(total_short$response_num)))
 )
 
+```
+
+```{r}
+params$v$results %>%
+  tidyr::drop_na(response) %>%
+  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1)) %>%
+  dplyr::mutate(m = cumsum(obs)) %>%
+  dplyr::select(itnum, obs, m, theta, sem)
 ```
 
 ### Summary
