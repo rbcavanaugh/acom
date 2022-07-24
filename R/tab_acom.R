@@ -6,7 +6,12 @@
 acom_tab_div <- function(values){
        div(
          shiny::fluidRow(style="height:0px;",
-           shiny::uiOutput("item_number_slides")
+                         column(align = "left", width = 6,
+                                shiny::uiOutput("item_number_slides")),
+                         column(align = "right", width = 6,
+                                actionButton("help", icon =  shiny::icon("circle-info"), label = uiOutput("item_info"),
+                                                             style = "font-size: 1rem;background-color:#fff; border:0px;",
+                                                             class = "ttip"))
          ),
          shiny::fluidRow(
            column(width = 10,offset = 1,align = "center",

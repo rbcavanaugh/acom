@@ -8,21 +8,13 @@
 pagetitle <- function(){
   
      title = div(
-       #div("PNT-CAT"),
-       div(#id = "navbar-right",
+       div(
            shinyjs::hidden(
              downloadReportUI(id = "download_report")
            ),
            shinyjs::hidden(
              downloadResultsUI(id = "download_results")
            ),
-           
-         #  shinyjs::hidden(
-         #     downloadReportUI(id = "download_report_rescore")
-         # ),
-           # shinyjs::hidden(
-           #   downloadResultsUI(id = "download_results_rescore")
-           # ),
          shinyjs::hidden(
            actionButton("offline_test", "Score offline test",
                         style = "background-color:#f8f9fa; border:0px;")
@@ -41,9 +33,6 @@ pagetitle <- function(){
                         label = "Instructions",
                         style = "font-size: 1rem;background-color:#f8f9fa; border:0px;")
          ),
-         shinyjs::hidden(actionButton("help", icon =  shiny::icon("info-circle"), label = uiOutput("item_info"),
-                      style = "font-size: 1rem;background-color:#f8f9fa; border:0px;",
-                      class = "ttip")),
          actionButton("info", icon =  shiny::icon("readme"), label = NULL,
                       style = "font-size: 1rem;background-color:#f8f9fa; border:0px;")
      )
