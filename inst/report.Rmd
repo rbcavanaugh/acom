@@ -110,14 +110,6 @@ table2 = tibble::tribble(
 
 ```
 
-```{r}
-params$v$results %>%
-  tidyr::drop_na(response) %>%
-  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1)) %>%
-  dplyr::mutate(m = cumsum(obs)) %>%
-  dplyr::select(itnum, obs, m, theta, sem)
-```
-
 ### Summary
 
 This individual's T-score estimate of `r theta` (95% confidence interval: `r x95`) 
