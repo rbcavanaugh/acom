@@ -61,53 +61,6 @@ table1 = tibble::tribble(
     "Items marked NA"        , as.character(sum(is.na(completed$response_num)))
   )
 
-
-
-short = params$v$results %>%
-  dplyr::arrange(order) %>%
-  tidyr::drop_na(response) %>%
-  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1)) %>%
-  dplyr::mutate(m = cumsum(obs)) %>%
-  dplyr::filter(m == 12) %>%
-  dplyr::mutate(theta = round(theta, 2), sem = round(sem, 2))
-
-total_short = params$v$results %>%
-  dplyr::arrange(order) %>%
-  tidyr::drop_na(response) %>%
-  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1),
-         m = cumsum(obs)) %>%
-  dplyr::filter(m <= 12) 
-
-valid_short = params$v$results %>%
-  dplyr::arrange(order) %>%
-  tidyr::drop_na(response) %>%
-  dplyr::mutate(obs = ifelse(is.na(response_num), 0, 1),
-         m = cumsum(obs)) %>%
-  dplyr::filter(m <= 12) %>%
-  tidyr::drop_na(response_num)
-
-theta_short = short$theta
-sem_short = short$sem
-z_short = (theta_short-50)/10
-ab_short = ifelse(z_short>=0, "above", "below")
-
-x95_short = glue::glue("{round(theta_short-1.96  *sem_short, 2)}, {round(theta_short+1.96  *sem_short, 2)}")
-x90_short = glue::glue("{round(theta_short-1.645 *sem_short, 2)}, {round(theta_short+1.645 *sem_short, 2)}")
-x68_short = glue::glue("{round(theta_short-1     *sem_short, 2)}, {round(theta_short+1     *sem_short, 2)}")
-
-table2 = tibble::tribble(
-  ~"label", ~"score",
-  "Final T-Score Estimate" , as.character(theta_short),
-  "Final Standard Error"   , as.character(sem_short),   
-  "Final Estimate Type"    , as.character("EAP"),   
-  "95% C.I."               , as.character(x95_short),
-  "90% C.I."               , as.character(x90_short),
-  "68% C.I."               , as.character(x68_short),
-  "Test Length"            , as.character(nrow(valid_short)),
-  "Items completed"        , as.character(nrow(total_short)),
-  "Items marked NA"        , as.character(sum(is.na(total_short$response_num)))
-)
-
 ```
 
 ### Summary
@@ -144,11 +97,6 @@ Item parameter set: January2015_59ItemParamSet
 knitr::kable(table1, booktabs = TRUE, col.names = NULL)
 ```
 
-**Test: 12-item Adaptive ACOM short form**
-
-```{r, echo = FALSE}
-knitr::kable(table2, booktabs = TRUE, col.names = NULL)
-```
 
 ### About this report
 
