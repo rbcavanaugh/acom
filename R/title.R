@@ -33,7 +33,7 @@ pagetitle <- function(){
                         label = "Instructions",
                         style = "font-size: 1rem;background-color:#f8f9fa; border:0px;")
          ),
-         actionButton("info", icon =  shiny::icon("readme"), label = NULL,
+         actionButton("info", icon =  shiny::icon("file-alt"), label = NULL,
                       style = "font-size: 1rem;background-color:#f8f9fa; border:0px;")
      )
      )

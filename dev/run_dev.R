@@ -20,3 +20,13 @@ run_app()
 # stats,
 # htmltools,
 # pkgload
+
+
+
+# Versioning
+
+# change version in app_ui.R
+# change version in DESCRIPTION FILE
+# change version in README
+# change version in CITATION x2
+# change tag on github

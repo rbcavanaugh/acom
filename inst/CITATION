@@ -1,7 +1,7 @@
 bibentry(bibtype = "misc",
-         title = "acom: The Aphasia Communication Outcome Measure. Version 0.4.0.1",
+         title = "acom: The Aphasia Communication Outcome Measure. Version 4.0.2",
          author=c(person("Robert", "Cavanaugh"), person("Alexander M", "Swiderski"), person("William D", "Hula")),
          year = 2022,
          url = "https://github.com/rbcavanaugh/acom",
-         	textVersion = paste("Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 0.4.0.1", "Available from https://github.com/rbcavanaugh/acom.",  sep=" "),
+         	textVersion = paste("Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 4.0.2", "Available from https://github.com/rbcavanaugh/acom.",  sep=" "),
           mheader = "To cite in publications use:")

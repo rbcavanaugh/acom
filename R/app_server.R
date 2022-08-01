@@ -389,16 +389,23 @@ app_server <- function( input, output, session ) {
       showModal(
         modalDialog(
           size = "xl",
-          title = "Technical Documentation",
-          div(style = "font-size:0.8rem;",
-              includeMarkdown(system.file("app/www/about.md", package = "acom"))),
+          title = "ACOM Documentation",
+          tabsetPanel(id = "doc",
+                      tabPanel(title = "Technical Documentation",
+                        div(style = "font-size:0.9rem;padding:2%;",
+                                   includeMarkdown(system.file("app/www/about.md", package = "acom"))),),
+                      tabPanel(title = "Choosing a test length",
+                        div(style = "font-size:0.9rem;padding:2%;",
+                                   includeMarkdown(system.file("app/www/selecting.md", package = "acom"))),)
+                      ),
+          
           footer = modalButton("Dismiss"),
           easyClose = TRUE
         )
       )
   })
   
-  # holds information for the technical documentation
+  # holds information for the instructions after starting a test
   observeEvent(input$instructions,{
     showModal(
       modalDialog(
