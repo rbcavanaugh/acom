@@ -393,10 +393,10 @@ app_server <- function( input, output, session ) {
           tabsetPanel(id = "doc",
                       tabPanel(title = "Technical Documentation",
                         div(style = "font-size:0.9rem;padding:2%;",
-                                   includeMarkdown(system.file("app/www/about.md", package = "acom"))),),
+                                   includeMarkdown(system.file("app/www/about.md", package = "acom")))),
                       tabPanel(title = "Choosing a test length",
                         div(style = "font-size:0.9rem;padding:2%;",
-                                   includeMarkdown(system.file("app/www/selecting.md", package = "acom"))),)
+                                   includeMarkdown(system.file("app/www/selecting.md", package = "acom"))))
                       ),
           
           footer = modalButton("Dismiss"),
