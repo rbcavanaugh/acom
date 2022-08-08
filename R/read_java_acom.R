@@ -33,8 +33,8 @@ read_java_acom <- function(path, alpha = FALSE){
     
     test_info = df_txt %>%
       dplyr::filter(stringr::str_detect(value, detect)) %>%
-      tidyr::separate(value, into = c("description", "value"), sep = ":|=", extra = "merge") %>%
-      dplyr::mutate(description = stringr::str_trim(description),
+      tidyr::separate(value, into = c("description1", "value"), sep = ":|=", extra = "merge") %>%
+      dplyr::mutate(description = stringr::str_trim(description1),
              value = stringr::str_trim(value)) %>%
       dplyr::slice(1:10)
     
