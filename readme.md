@@ -23,7 +23,7 @@ There are a number of ways to use the application (see below). However, please n
 
 #### 1. Online
 
-The app is now online at  https://rb-cavanaugh.shinyapps.io/acom/
+The app is now online at  https://william-hula.shinyapps.io/acom/
 
 #### 2. Local Installation
 
