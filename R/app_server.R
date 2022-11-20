@@ -133,6 +133,8 @@ app_server <- function( input, output, session ) {
     # check that a response was entered. if not, show notification
     if (is.null(input$select)) {
       shiny::showNotification("Enter a response")
+    } else {
+      shinyjs::disable("enter")
     }
     # don't go further without a response
     req(input$select)
@@ -245,6 +247,7 @@ app_server <- function( input, output, session ) {
       v$i = v$i + 1 # iterate on the item number
       v$itnum = cat_data$next_item # this is the next item
       v$clarify = NA # reset clarify to NA
+      shinyjs::enable("enter")
     }
     
   })
