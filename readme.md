@@ -13,7 +13,7 @@ A description of the psychometric characteristics of the current version of the 
 
 Comments, feedback, and bug reports are encouraged. Please submit as an issue: https://github.com/rbcavanaugh/acom/issues
 
-Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 4.0.2, Available from https://github.com/rbcavanaugh/acom.
+Citation: Cavanaugh, R., Swiderski, A.M., Hula, W.D. (2022). acom: The Aphasia Communication Outcome Measure. Version 4.0.3, Available from https://github.com/rbcavanaugh/acom.
 
 ### Installing & Using the application
 

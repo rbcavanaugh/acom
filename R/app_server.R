@@ -21,6 +21,7 @@ app_server <- function( input, output, session ) {
     results = d, # table of all items parameters and response columns. loaded from sysdata.rda
     num_enters = 0, # for moving to the next item
     clarify = NA, # for holding the response to the DNA clarification question
+    disable_enter = 0
   )
 
   ##############################################################################
@@ -128,47 +129,70 @@ app_server <- function( input, output, session ) {
   ##############################################################################
   ##############################################################################
   
+  observe({
+    if(v$disable_enter == 0){
+      shinyjs::enable("enter")
+    } else if (v$disable_enter == 1) {
+      shinyjs::disable("enter")
+    }
+  })
+  
   # Everytime you hit enter
   observeEvent(input$enter, {
+    
+    # Disable the enter button if processing a current response
+    req(v$disable_enter == 0)
+    # safeguards againt accepting a response while the model is processing
+    v$disable_enter = 1
+    
     # check that a response was entered. if not, show notification
     if (is.null(input$select)) {
       shiny::showNotification("Enter a response")
-    }
-    # don't go further without a response
-    req(input$select)
-    
-    # If you select "Doesn't apply to me" open a modal...
-    # asks for clarification for a DNA response
-    if (input$select == "Doesn't apply to me") {
-      showModal(
-        modalDialog(
-          size = "m",
-          title = "Is this due to your communication difficulties or some other reason?",
-          div(
-            align = "center",
-            style = "margin-top: 24px;",
-            # yes action button. logic for clicking is below
-            div(actionButton("yes",
-                             tags$b("Due to my communication difficulties"),
-                                    width = "100%"), style="margin:20px;"),
-            # no action button. logic for clicking is below
-            div(actionButton("no",
-                             tags$b("Due to some other reason"),
-                             width = "100%"), style="margin:20px;")
-          ),
-          footer = modalButton("Cancel"),
-          easyClose = FALSE
-        )
-      )
+      v$disable_enter = 0
     } else {
-      # iterate on the number of times the enter button is selected
-      # controls also the progression of items
-      v$num_enters = v$num_enters + 1
+
+        # don't go further without a response
+        req(input$select)
+        
+        # If you select "Doesn't apply to me" open a modal...
+        # asks for clarification for a DNA response
+        if (input$select == "Doesn't apply to me") {
+          showModal(
+            modalDialog(
+              size = "m",
+              title = "Is this due to your communication difficulties or some other reason?",
+              div(
+                align = "center",
+                style = "margin-top: 24px;",
+                # yes action button. logic for clicking is below
+                div(actionButton("yes",
+                                 tags$b("Due to my communication difficulties"),
+                                        width = "100%"), style="margin:20px;"),
+                # no action button. logic for clicking is below
+                div(actionButton("no",
+                                 tags$b("Due to some other reason"),
+                                 width = "100%"), style="margin:20px;")
+              ),
+              footer = actionButton("cancel_clarification", "Cancel"),
+                #modalButton("Cancel"),
+              easyClose = FALSE
+            )
+          )
+        } else {
+          # iterate on the number of times the enter button is selected
+          # controls also the progression of items
+          v$num_enters = v$num_enters + 1
+        }
     }
     
     
   })
   
+  observeEvent(input$cancel_clarification,{
+    updateRadioButtons(session, "select", selected = character(0))
+    removeModal()
+    v$disable_enter = 0
+  })
   
   # close the modal when the no button is pressed
   observeEvent(input$no, {
@@ -245,6 +269,9 @@ app_server <- function( input, output, session ) {
       v$i = v$i + 1 # iterate on the item number
       v$itnum = cat_data$next_item # this is the next item
       v$clarify = NA # reset clarify to NA
+      v$disable_enter = 0
+      
+      
     }
     
   })
