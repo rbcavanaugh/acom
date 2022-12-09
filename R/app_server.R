@@ -9,6 +9,9 @@
 #' @noRd
 app_server <- function( input, output, session ) {
   
+  writeToDir <- shiny::getShinyOption("sd", default = FALSE)
+  print(getwd())
+  
   ################################################################################
   ########################## Initialize reactive values ##########################
   # ------------------------------------------------------------------------------
@@ -248,6 +251,23 @@ app_server <- function( input, output, session ) {
     # tracks the total number of responses including DNA + no
     complete_responses = sum(!is.na(v$results$response))
     
+    # If elected, write to directory with each selection
+    if(isTRUE(writeToDir)){
+      v$datetime = input$jstime
+      write.csv(
+        v$results %>%
+          dplyr::mutate(date = v$datetime) %>%
+          dplyr::select(item, itnum, item_content,
+                        content_area, order, response, DNA_comm_dis,
+                        theta, sem, discrim, b1, b2, b3, merge_cats,
+                        response_num, response_merge, participant,
+                        examiner, date) %>%
+          dplyr::arrange(order),
+        paste(as.character(Sys.Date()),
+              unique(v$results$participant), "acom.csv", sep = "_")
+      )
+    }
+    #write.csv(v$results, "test.csv")
     # if you've reached the max number of responses...go to results
     # either the number of valid resposnes is at the test length
     # or the total number of rsposnes is at 59, in which case there are 

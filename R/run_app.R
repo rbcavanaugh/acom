@@ -12,8 +12,10 @@ run_app <- function(
   options = list(), 
   enableBookmarking = NULL,
   uiPattern = "/",
+  saveData = FALSE,
   ...
 ) {
+  shiny::shinyOptions(sd = saveData)
   with_golem_options(
     app = shinyApp(
       ui = app_ui,
