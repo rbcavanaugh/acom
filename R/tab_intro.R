@@ -21,7 +21,10 @@ intro_tab_div <- function() {
                              min = 12, max = 59, step = 1, value = 59)
                              ),
                          textInput("participant", "Participant ID"),
-                         textInput("examiner", "Examiner ID")
+                         textInput("examiner", "Examiner ID"),
+                         div(align="center",
+                         uiOutput("folderChoose")
+                         ),
                      )),br(),
                  div(align = "center",
                      actionButton("next1", "Next")

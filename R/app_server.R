@@ -9,9 +9,45 @@
 #' @noRd
 app_server <- function( input, output, session ) {
   
-  writeToDir <- shiny::getShinyOption("sd", default = FALSE)
-  print(getwd())
   
+  ################################################################################
+  ########################## Save data as you progress ###########################
+  # ------------------------------------------------------------------------------
+  ################################################################################
+  ################################################################################
+  
+  # Listener for save data option
+  writeToDir <- shiny::getShinyOption("sd", default = FALSE)
+  
+  # IF save data is selected, do this stuff
+  if(isTRUE(writeToDir)){
+    volumes <- c(Home = fs::path_home(), "R Installation" = R.home(),
+                 shinyFiles::getVolumes()())
+    output$folderChoose <- renderUI({
+      shinyFiles::shinyDirButton('folder', 'Select folder to save data',
+                                 'Select a folder to save the test data',
+                                 FALSE,
+                                 style = "background-color: #8EBBE9;
+                                          border-color: #dee2e6;"
+                                 )
+      
+    })
+    
+    shinyFiles::shinyDirChoose(input, 'folder',roots=volumes,allowDirCreate = FALSE)
+    
+    observeEvent(input$folder,{
+      req(nchar(shinyFiles::parseDirPath(volumes, input$folder))>5)
+      
+      setwd(shinyFiles::parseDirPath(volumes, input$folder))
+      
+      cat("The test file will be saved at: ", getwd())
+    })
+    
+    # otherwise don't change anything, and render an empty UI
+  } else {
+    output$folderChoose <- renderUI({})
+  }
+
   ################################################################################
   ########################## Initialize reactive values ##########################
   # ------------------------------------------------------------------------------

@@ -154,3 +154,7 @@ input[value="Doesn't apply to me"] + span{
   text-decoration: none;
   text-align: left;
 }
+
+#folder:hover {
+  background-color:#CCdee2e6;
+}
