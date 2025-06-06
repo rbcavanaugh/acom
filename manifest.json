@@ -1138,42 +1138,6 @@
         "Archs": "covr.so.dSYM"
       }
     },
-    "covrpage": {
-      "Source": "github",
-      "Repository": null,
-      "description": {
-        "Package": "covrpage",
-        "Title": "Create a Readme Summary Page for GitHub testthat and covr\nOutputs",
-        "Version": "0.2",
-        "Authors@R": "c(\n  person(given   = \"Jonathan\",\n         family  = \"Sidi\",\n         email   = \"yonicd@gmail.com\",\n         role    = c(\"aut\",'cre'),\n         comment = c(ORCID = \"0000-0002-4222-1819\")\n         ),\n  person(given   = \"Locke Data\",\n         role    = \"fnd\",\n         comment = \"https://itsalocke.com\")\n  )",
-        "Description": "Create a README file to place in package test subdirectory to communicate \n  with other users in more detail results of testthat and covr.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/yonicd/covrpage",
-        "BugReports": "https://github.com/yonicd/covrpage/issues",
-        "Encoding": "UTF-8",
-        "Depends": "R (>= 4.0)",
-        "Imports": "utils, git2r, rmarkdown, covr, stats, testthat, curl, whisker,\nwithr, remotes",
-        "RoxygenNote": "7.2.1",
-        "Suggests": "knitr,spelling, rstudioapi",
-        "VignetteBuilder": "knitr",
-        "Language": "en-US",
-        "RemoteType": "github",
-        "RemoteHost": "api.github.com",
-        "RemoteRepo": "covrpage",
-        "RemoteUsername": "yonicd",
-        "RemoteRef": "HEAD",
-        "RemoteSha": "bafeb195d1999b8c3a48186e26f59cafcdfa3670",
-        "GithubRepo": "covrpage",
-        "GithubUsername": "yonicd",
-        "GithubRef": "HEAD",
-        "GithubSHA1": "bafeb195d1999b8c3a48186e26f59cafcdfa3670",
-        "NeedsCompilation": "no",
-        "Packaged": "2025-06-06 00:14:38 UTC; robcavanaugh",
-        "Author": "Jonathan Sidi [aut, cre] (<https://orcid.org/0000-0002-4222-1819>),\n  Locke Data [fnd] (https://itsalocke.com)",
-        "Maintainer": "Jonathan Sidi <yonicd@gmail.com>",
-        "Built": "R 4.3.1; ; 2025-06-06 00:14:38 UTC; unix"
-      }
-    },
     "cpp11": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
