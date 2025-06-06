@@ -327,28 +327,6 @@
         "Built": "R 4.3.0; ; 2023-04-11 04:31:38 UTC; unix"
       }
     },
-    "acom": {
-      "Source": "github",
-      "Repository": null,
-      "description": {
-        "Package": "acom",
-        "Title": "Aphasia Communication Outcome Measure",
-        "Version": "4.0.3",
-        "Date": "2021-10-6",
-        "Authors@R": "c(\nperson(given = 'Robert',\nfamily = 'Cavanaugh',\nemail = 'rob.cavanaugh@pitt.edu',\nrole = c('cre', 'aut')),\nperson(given = 'Alexander',\nfamily = 'Swiderski',\nrole = 'aut'),\nperson(given = \"William D.\",\nfamily = \"Hula\",\nrole = \"aut\")\n)",
-        "Description": "A Shiny web-app for administering and scoring the Aphasia Communication Outcome Measure.",
-        "License": "CC BY 4.0",
-        "Imports": "config (>= 0.3.1),\ngolem (>= 0.3.1),\nshiny (>= 1.6.0),\nshinyvalidate,\ncatR,\nDT,\nshinyjs,\nbslib,\ntibble,\ntidyr,\ndplyr,\nrmarkdown,\nmarkdown,\nmagrittr,\nglue",
-        "Encoding": "UTF-8",
-        "LazyData": "true",
-        "RoxygenNote": "7.2.1",
-        "URL": "https://rbcavanaugh.github.io/acom/, https://github.com/rbcavanaugh/acom",
-        "BugReports": "https://github.com/rbcavanaugh/acom/issues",
-        "Suggests": "testthat (>= 3.0.0),\nstringr,\nreadr,\nreadxl",
-        "Config/testthat/edition": "3",
-        "Depends": "R (>= 3.6.0)"
-      }
-    },
     "askpass": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
